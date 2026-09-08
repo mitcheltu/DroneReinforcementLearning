@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "simulator_id": "quadrotor-rk4-v1",
+  "controller_id": "rate-p-v1",
+  "world_frame": "right-handed-z-up",
+  "body_frame": "x-forward-y-left-z-up",
+  "quaternion_order": "wxyz",
+  "mass_kg": 0.8,
+  "gravity_mps2": 9.81,
+  "inertia_kgm2": [
+    0.005,
+    0.005,
+    0.009
+  ],
+  "arm_length_m": 0.2,
+  "rotor_max_thrust_n": 4,
+  "motor_time_constant_s": 0.03,
+  "linear_drag_kgps": 0.08,
+  "reaction_torque_per_thrust_m": 0.016,
+  "rate_gains": [
+    0.08,
+    0.08,
+    0.04
+  ],
+  "collision_radius_m": 0.3,
+  "gate_pass_margin_m": 0.05,
+  "physics_hz": 120,
+  "policy_hz": 60,
+  "geometry_epsilon_m": 1e-9,
+  "quaternion_input_tolerance": 0.000001,
+  "quaternion_min_norm": 1e-12,
+  "motor_roundoff_tolerance_n": 1e-10,
+  "state_limit_speed_mps": 100,
+  "state_limit_rate_radps": 100,
+  "action": {
+    "schema_id": "collective-bodyrate-v1",
+    "dimension": 4,
+    "minimum": -1,
+    "maximum": 1,
+    "max_collective_n": 16,
+    "max_body_rates_radps": [
+      6,
+      6,
+      3
+    ]
+  },
+  "rotors": [
+    {
+      "index": 0,
+      "position_m": [
+        0.1414213562373095,
+        0.1414213562373095,
+        0
+      ],
+      "reaction_sign": 1
+    },
+    {
+      "index": 1,
+      "position_m": [
+        -0.1414213562373095,
+        0.1414213562373095,
+        0
+      ],
+      "reaction_sign": -1
+    },
+    {
+      "index": 2,
+      "position_m": [
+        -0.1414213562373095,
+        -0.1414213562373095,
+        0
+      ],
+      "reaction_sign": 1
+    },
+    {
+      "index": 3,
+      "position_m": [
+        0.1414213562373095,
+        -0.1414213562373095,
+        0
+      ],
+      "reaction_sign": -1
+    }
+  ]
+}

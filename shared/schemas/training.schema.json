@@ -1,0 +1,997 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:aerorl:schema:training:v1",
+  "title": "AeroRL training v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "config_id": {
+      "type": "string",
+      "const": "training-v1"
+    },
+    "ppo": {
+      "type": "object",
+      "properties": {
+        "algorithm": {
+          "type": "string",
+          "const": "PPO"
+        },
+        "policy": {
+          "type": "string",
+          "const": "MlpPolicy"
+        },
+        "actor_layers": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "number",
+              "minimum": 0
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "critic_layers": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "number",
+              "minimum": 0
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "activation": {
+          "type": "string",
+          "const": "Tanh"
+        },
+        "orthogonal_init": {
+          "type": "boolean",
+          "const": true
+        },
+        "log_std_init": {
+          "type": "number",
+          "minimum": -10,
+          "maximum": 2
+        },
+        "device": {
+          "type": "string",
+          "const": "cpu"
+        },
+        "environment_candidates": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "number",
+              "minimum": 0
+            }
+          ],
+          "items": false,
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "n_steps": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "batch_size": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "n_epochs": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "gamma": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "gae_lambda": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "clip_range": {
+          "type": "number",
+          "minimum": 0
+        },
+        "clip_range_vf": {
+          "type": "null"
+        },
+        "normalize_advantage": {
+          "type": "boolean",
+          "const": true
+        },
+        "ent_coef": {
+          "type": "number",
+          "minimum": 0
+        },
+        "vf_coef": {
+          "type": "number",
+          "minimum": 0
+        },
+        "max_grad_norm": {
+          "type": "number",
+          "minimum": 0
+        },
+        "target_kl": {
+          "type": "number",
+          "minimum": 0
+        },
+        "use_sde": {
+          "type": "boolean",
+          "const": false
+        },
+        "stats_window_size": {
+          "type": "number",
+          "minimum": 0
+        },
+        "vec_normalize": {
+          "type": "boolean",
+          "const": false
+        },
+        "budget_transitions": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 9007199254740991
+        },
+        "learning_rate": {
+          "type": "object",
+          "properties": {
+            "start": {
+              "type": "number",
+              "minimum": 0
+            },
+            "end": {
+              "type": "number",
+              "minimum": 0
+            },
+            "schedule": {
+              "type": "string",
+              "const": "global-linear"
+            }
+          },
+          "required": [
+            "start",
+            "end",
+            "schedule"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "algorithm",
+        "policy",
+        "actor_layers",
+        "critic_layers",
+        "activation",
+        "orthogonal_init",
+        "log_std_init",
+        "device",
+        "environment_candidates",
+        "n_steps",
+        "batch_size",
+        "n_epochs",
+        "gamma",
+        "gae_lambda",
+        "clip_range",
+        "clip_range_vf",
+        "normalize_advantage",
+        "ent_coef",
+        "vf_coef",
+        "max_grad_norm",
+        "target_kl",
+        "use_sde",
+        "stats_window_size",
+        "vec_normalize",
+        "budget_transitions",
+        "learning_rate"
+      ],
+      "additionalProperties": false
+    },
+    "curriculum": {
+      "type": "object",
+      "properties": {
+        "frontier_probability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "previous_probability": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "promotion_interval_transitions": {
+          "type": "number",
+          "minimum": 0
+        },
+        "promotion_cases": {
+          "type": "number",
+          "minimum": 0
+        },
+        "promotion_successes": {
+          "type": "number",
+          "minimum": 0
+        },
+        "consecutive_passes": {
+          "type": "number",
+          "minimum": 0
+        },
+        "min_frontier_transitions": {
+          "type": "number",
+          "minimum": 0
+        },
+        "speed_completion_threshold": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "stages": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "object",
+              "properties": {
+                "index": {
+                  "type": "integer",
+                  "const": 0
+                },
+                "task_kind": {
+                  "type": "string",
+                  "const": "hover"
+                },
+                "gate_count": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "max_turn_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "max_height_change_m": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "yaw_jitter_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "position_perturbation_m": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "velocity_perturbation_mps": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "tilt_perturbation_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "yaw_perturbation_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "rate_perturbation_radps": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "index",
+                "task_kind",
+                "gate_count",
+                "max_turn_rad",
+                "max_height_change_m",
+                "yaw_jitter_rad",
+                "position_perturbation_m",
+                "velocity_perturbation_mps",
+                "tilt_perturbation_rad",
+                "yaw_perturbation_rad",
+                "rate_perturbation_radps"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "index": {
+                  "type": "integer",
+                  "const": 1
+                },
+                "task_kind": {
+                  "type": "string",
+                  "const": "race"
+                },
+                "gate_count": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "max_turn_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "max_height_change_m": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "yaw_jitter_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "position_perturbation_m": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "velocity_perturbation_mps": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "tilt_perturbation_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "yaw_perturbation_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "rate_perturbation_radps": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "index",
+                "task_kind",
+                "gate_count",
+                "max_turn_rad",
+                "max_height_change_m",
+                "yaw_jitter_rad",
+                "position_perturbation_m",
+                "velocity_perturbation_mps",
+                "tilt_perturbation_rad",
+                "yaw_perturbation_rad",
+                "rate_perturbation_radps"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "index": {
+                  "type": "integer",
+                  "const": 2
+                },
+                "task_kind": {
+                  "type": "string",
+                  "const": "race"
+                },
+                "gate_count": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "max_turn_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "max_height_change_m": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "yaw_jitter_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "position_perturbation_m": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "velocity_perturbation_mps": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "tilt_perturbation_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "yaw_perturbation_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "rate_perturbation_radps": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "index",
+                "task_kind",
+                "gate_count",
+                "max_turn_rad",
+                "max_height_change_m",
+                "yaw_jitter_rad",
+                "position_perturbation_m",
+                "velocity_perturbation_mps",
+                "tilt_perturbation_rad",
+                "yaw_perturbation_rad",
+                "rate_perturbation_radps"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "index": {
+                  "type": "integer",
+                  "const": 3
+                },
+                "task_kind": {
+                  "type": "string",
+                  "const": "race"
+                },
+                "gate_count": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "max_turn_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "max_height_change_m": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "yaw_jitter_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "position_perturbation_m": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "velocity_perturbation_mps": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "tilt_perturbation_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "yaw_perturbation_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "rate_perturbation_radps": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "index",
+                "task_kind",
+                "gate_count",
+                "max_turn_rad",
+                "max_height_change_m",
+                "yaw_jitter_rad",
+                "position_perturbation_m",
+                "velocity_perturbation_mps",
+                "tilt_perturbation_rad",
+                "yaw_perturbation_rad",
+                "rate_perturbation_radps"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "index": {
+                  "type": "integer",
+                  "const": 4
+                },
+                "task_kind": {
+                  "type": "string",
+                  "const": "race"
+                },
+                "gate_count": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "max_turn_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "max_height_change_m": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "yaw_jitter_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "position_perturbation_m": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "velocity_perturbation_mps": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "tilt_perturbation_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "yaw_perturbation_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "rate_perturbation_radps": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "index",
+                "task_kind",
+                "gate_count",
+                "max_turn_rad",
+                "max_height_change_m",
+                "yaw_jitter_rad",
+                "position_perturbation_m",
+                "velocity_perturbation_mps",
+                "tilt_perturbation_rad",
+                "yaw_perturbation_rad",
+                "rate_perturbation_radps"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "index": {
+                  "type": "integer",
+                  "const": 5
+                },
+                "task_kind": {
+                  "type": "string",
+                  "const": "race"
+                },
+                "gate_count": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "max_turn_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "max_height_change_m": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "yaw_jitter_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "position_perturbation_m": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "velocity_perturbation_mps": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "tilt_perturbation_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "yaw_perturbation_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "rate_perturbation_radps": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "index",
+                "task_kind",
+                "gate_count",
+                "max_turn_rad",
+                "max_height_change_m",
+                "yaw_jitter_rad",
+                "position_perturbation_m",
+                "velocity_perturbation_mps",
+                "tilt_perturbation_rad",
+                "yaw_perturbation_rad",
+                "rate_perturbation_radps"
+              ],
+              "additionalProperties": false
+            },
+            {
+              "type": "object",
+              "properties": {
+                "index": {
+                  "type": "integer",
+                  "const": 6
+                },
+                "task_kind": {
+                  "type": "string",
+                  "const": "race"
+                },
+                "gate_count": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "max_turn_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "max_height_change_m": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "yaw_jitter_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "position_perturbation_m": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "velocity_perturbation_mps": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "tilt_perturbation_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "yaw_perturbation_rad": {
+                  "type": "number",
+                  "minimum": 0
+                },
+                "rate_perturbation_radps": {
+                  "type": "number",
+                  "minimum": 0
+                }
+              },
+              "required": [
+                "index",
+                "task_kind",
+                "gate_count",
+                "max_turn_rad",
+                "max_height_change_m",
+                "yaw_jitter_rad",
+                "position_perturbation_m",
+                "velocity_perturbation_mps",
+                "tilt_perturbation_rad",
+                "yaw_perturbation_rad",
+                "rate_perturbation_radps"
+              ],
+              "additionalProperties": false
+            }
+          ],
+          "items": false,
+          "minItems": 7,
+          "maxItems": 7
+        }
+      },
+      "required": [
+        "frontier_probability",
+        "previous_probability",
+        "promotion_interval_transitions",
+        "promotion_cases",
+        "promotion_successes",
+        "consecutive_passes",
+        "min_frontier_transitions",
+        "speed_completion_threshold",
+        "stages"
+      ],
+      "additionalProperties": false
+    },
+    "reward": {
+      "type": "object",
+      "properties": {
+        "progress_per_m": {
+          "type": "number",
+          "minimum": 0
+        },
+        "gate_bonus": {
+          "type": "number",
+          "minimum": 0
+        },
+        "finish_bonus": {
+          "type": "number",
+          "minimum": 0
+        },
+        "reliability_time_per_s": {
+          "type": "number",
+          "minimum": 0
+        },
+        "speed_time_per_s": {
+          "type": "number",
+          "minimum": 0
+        },
+        "smoothness": {
+          "type": "number",
+          "minimum": 0
+        },
+        "failure_cost": {
+          "type": "number",
+          "minimum": 0
+        },
+        "hover": {
+          "type": "object",
+          "properties": {
+            "alive_per_s": {
+              "type": "number",
+              "minimum": 0
+            },
+            "position_cost": {
+              "type": "number",
+              "minimum": 0
+            },
+            "velocity_cost": {
+              "type": "number",
+              "minimum": 0
+            },
+            "tilt_cost": {
+              "type": "number",
+              "minimum": 0
+            },
+            "rate_cost": {
+              "type": "number",
+              "minimum": 0
+            },
+            "smoothness": {
+              "type": "number",
+              "minimum": 0
+            },
+            "departure_m": {
+              "type": "number",
+              "minimum": 0
+            },
+            "departure_tilt_rad": {
+              "type": "number",
+              "minimum": 0
+            },
+            "success_bonus": {
+              "type": "number",
+              "minimum": 0
+            },
+            "failure_cost": {
+              "type": "number",
+              "minimum": 0
+            }
+          },
+          "required": [
+            "alive_per_s",
+            "position_cost",
+            "velocity_cost",
+            "tilt_cost",
+            "rate_cost",
+            "smoothness",
+            "departure_m",
+            "departure_tilt_rad",
+            "success_bonus",
+            "failure_cost"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "progress_per_m",
+        "gate_bonus",
+        "finish_bonus",
+        "reliability_time_per_s",
+        "speed_time_per_s",
+        "smoothness",
+        "failure_cost",
+        "hover"
+      ],
+      "additionalProperties": false
+    },
+    "evaluation": {
+      "type": "object",
+      "properties": {
+        "root_seeds": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "type": "number",
+              "minimum": 0
+            }
+          ],
+          "items": false,
+          "minItems": 3,
+          "maxItems": 3
+        },
+        "promotion_namespace": {
+          "type": "number",
+          "minimum": 0
+        },
+        "development_namespace": {
+          "type": "number",
+          "minimum": 0
+        },
+        "final_namespace": {
+          "type": "number",
+          "minimum": 0
+        },
+        "stress_namespace": {
+          "type": "number",
+          "minimum": 0
+        },
+        "public_namespace": {
+          "type": "number",
+          "minimum": 0
+        },
+        "development_cases": {
+          "type": "number",
+          "minimum": 0
+        },
+        "final_cases": {
+          "type": "number",
+          "minimum": 0
+        },
+        "stress_cases": {
+          "type": "number",
+          "minimum": 0
+        },
+        "public_cases": {
+          "type": "number",
+          "minimum": 0
+        },
+        "release_completion": {
+          "type": "number",
+          "minimum": 0
+        },
+        "reproducibility_completion": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "root_seeds",
+        "promotion_namespace",
+        "development_namespace",
+        "final_namespace",
+        "stress_namespace",
+        "public_namespace",
+        "development_cases",
+        "final_cases",
+        "stress_cases",
+        "public_cases",
+        "release_completion",
+        "reproducibility_completion"
+      ],
+      "additionalProperties": false
+    },
+    "checkpoint": {
+      "type": "object",
+      "properties": {
+        "interval_transitions": {
+          "type": "number",
+          "minimum": 0
+        },
+        "keep_latest": {
+          "type": "number",
+          "minimum": 0
+        },
+        "wall_budget_s": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "interval_transitions",
+        "keep_latest",
+        "wall_budget_s"
+      ],
+      "additionalProperties": false
+    },
+    "recording": {
+      "type": "object",
+      "properties": {
+        "training_cap_bytes": {
+          "type": "number",
+          "minimum": 0
+        },
+        "evaluation_cap_bytes": {
+          "type": "number",
+          "minimum": 0
+        },
+        "diagnostics_cap_bytes": {
+          "type": "number",
+          "minimum": 0
+        },
+        "window_transitions": {
+          "type": "number",
+          "minimum": 0
+        },
+        "per_bucket": {
+          "type": "number",
+          "minimum": 0
+        },
+        "writer_queue": {
+          "type": "number",
+          "minimum": 0
+        },
+        "evaluation_comparison_cases": {
+          "type": "number",
+          "minimum": 0
+        },
+        "final_per_outcome": {
+          "type": "number",
+          "minimum": 0
+        },
+        "priority_version": {
+          "type": "string",
+          "const": "retention-v1"
+        }
+      },
+      "required": [
+        "training_cap_bytes",
+        "evaluation_cap_bytes",
+        "diagnostics_cap_bytes",
+        "window_transitions",
+        "per_bucket",
+        "writer_queue",
+        "evaluation_comparison_cases",
+        "final_per_outcome",
+        "priority_version"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "config_id",
+    "ppo",
+    "curriculum",
+    "reward",
+    "evaluation",
+    "checkpoint",
+    "recording"
+  ],
+  "additionalProperties": false
+}

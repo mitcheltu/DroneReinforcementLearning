@@ -1,0 +1,585 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:aerorl:schema:worker-message:v1",
+  "title": "AeroRL worker-message v1",
+  "oneOf": [
+    {
+      "type": "object",
+      "properties": {
+        "protocol_version": {
+          "const": 1
+        },
+        "generation_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "request_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "INIT"
+        },
+        "manifest": {
+          "$ref": "urn:aerorl:schema:model:v1"
+        },
+        "asset_base_url": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        }
+      },
+      "required": [
+        "protocol_version",
+        "generation_id",
+        "request_id",
+        "type",
+        "manifest",
+        "asset_base_url"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "protocol_version": {
+          "const": 1
+        },
+        "generation_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "request_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "LOAD_COURSE"
+        },
+        "course": {
+          "$ref": "urn:aerorl:schema:course:v1"
+        }
+      },
+      "required": [
+        "protocol_version",
+        "generation_id",
+        "request_id",
+        "type",
+        "course"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "protocol_version": {
+          "const": 1
+        },
+        "generation_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "request_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "RUN"
+        }
+      },
+      "required": [
+        "protocol_version",
+        "generation_id",
+        "request_id",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "protocol_version": {
+          "const": 1
+        },
+        "generation_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "request_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "PAUSE"
+        }
+      },
+      "required": [
+        "protocol_version",
+        "generation_id",
+        "request_id",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "protocol_version": {
+          "const": 1
+        },
+        "generation_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "request_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "RESET"
+        }
+      },
+      "required": [
+        "protocol_version",
+        "generation_id",
+        "request_id",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "protocol_version": {
+          "const": 1
+        },
+        "generation_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "request_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "DISPOSE"
+        }
+      },
+      "required": [
+        "protocol_version",
+        "generation_id",
+        "request_id",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "protocol_version": {
+          "const": 1
+        },
+        "generation_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "request_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "READY"
+        }
+      },
+      "required": [
+        "protocol_version",
+        "generation_id",
+        "request_id",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "protocol_version": {
+          "const": 1
+        },
+        "generation_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "request_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "PAUSED"
+        }
+      },
+      "required": [
+        "protocol_version",
+        "generation_id",
+        "request_id",
+        "type"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "protocol_version": {
+          "const": 1
+        },
+        "generation_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "request_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "RETURN_BUFFERS"
+        },
+        "buffer_ids": {
+          "type": "array",
+          "items": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 9007199254740991
+          },
+          "maxItems": 16
+        }
+      },
+      "required": [
+        "protocol_version",
+        "generation_id",
+        "request_id",
+        "type",
+        "buffer_ids"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "protocol_version": {
+          "const": 1
+        },
+        "generation_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "request_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "SNAPSHOT"
+        },
+        "state": {
+          "$ref": "urn:aerorl:schema:state:v1"
+        },
+        "previous_state": {
+          "$ref": "urn:aerorl:schema:state:v1"
+        },
+        "time_s": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 45
+        },
+        "previous_time_s": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 45
+        },
+        "target_gate_index": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10
+        },
+        "previous_action": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "minimum": -1,
+            "maximum": 1
+          },
+          "minItems": 4,
+          "maxItems": 4
+        },
+        "status": {
+          "enum": [
+            "ready",
+            "running",
+            "paused",
+            "finished_success",
+            "finished_failure"
+          ]
+        },
+        "wall_time_ms": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "protocol_version",
+        "generation_id",
+        "request_id",
+        "type",
+        "state",
+        "previous_state",
+        "time_s",
+        "previous_time_s",
+        "target_gate_index",
+        "previous_action",
+        "status",
+        "wall_time_ms"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "protocol_version": {
+          "const": 1
+        },
+        "generation_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "request_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "EVENT"
+        },
+        "events": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "type": {
+                "enum": [
+                  "gate_pass",
+                  "gate_miss_forward",
+                  "gate_cross_backward",
+                  "collision",
+                  "success",
+                  "timeout",
+                  "state_limit",
+                  "user_abort"
+                ]
+              },
+              "time_s": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 45
+              },
+              "target_index_before": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 10
+              },
+              "target_index_after": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 10
+              }
+            },
+            "required": [
+              "type",
+              "time_s",
+              "target_index_before",
+              "target_index_after"
+            ],
+            "additionalProperties": false
+          },
+          "maxItems": 32
+        }
+      },
+      "required": [
+        "protocol_version",
+        "generation_id",
+        "request_id",
+        "type",
+        "events"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "protocol_version": {
+          "const": 1
+        },
+        "generation_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "request_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "FINISHED"
+        },
+        "is_success": {
+          "type": "boolean"
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        "time_s": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 45
+        }
+      },
+      "required": [
+        "protocol_version",
+        "generation_id",
+        "request_id",
+        "type",
+        "is_success",
+        "reason",
+        "time_s"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "protocol_version": {
+          "const": 1
+        },
+        "generation_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "request_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "ERROR"
+        },
+        "error": {
+          "type": "object",
+          "properties": {
+            "code": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "message": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 256
+            },
+            "recoverable": {
+              "type": "boolean"
+            },
+            "details": {
+              "type": "object",
+              "properties": {
+                "path": { "type": ["string", "null"], "maxLength": 256 },
+                "rule": { "type": ["string", "null"], "maxLength": 256 }
+              },
+              "required": ["path", "rule"],
+              "additionalProperties": false
+            }
+          },
+          "required": [
+            "code",
+            "message",
+            "recoverable",
+            "details"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "protocol_version",
+        "generation_id",
+        "request_id",
+        "type",
+        "error"
+      ],
+      "additionalProperties": false
+    },
+    {
+      "type": "object",
+      "properties": {
+        "protocol_version": {
+          "const": 1
+        },
+        "generation_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "request_id": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 9007199254740991
+        },
+        "type": {
+          "const": "PERFORMANCE"
+        },
+        "inference_ms": {
+          "type": "number",
+          "minimum": 0
+        },
+        "physics_ms": {
+          "type": "number",
+          "minimum": 0
+        },
+        "real_time_factor": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "required": [
+        "protocol_version",
+        "generation_id",
+        "request_id",
+        "type",
+        "inference_ms",
+        "physics_ms",
+        "real_time_factor"
+      ],
+      "additionalProperties": false
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+[build-system]
+requires = ["hatchling>=1.27"]
+build-backend = "hatchling.build"
+
+[project]
+name = "aerorl-3d"
+version = "0.1.0"
+description = "Shared contracts and training foundation for AeroRL 3D"
+requires-python = ">=3.11,<3.12"
+dependencies = ["jsonschema[format]>=4.26", "referencing>=0.36"]
+
+[project.optional-dependencies]
+learning = [
+  "numpy>=2.2", "torch>=2.8", "gymnasium>=1.2", "stable-baselines3>=2.7",
+  "tensorboard>=2.20", "onnx>=1.19", "onnxruntime>=1.22",
+  "plotly==6.6.0",
+]
+
+[dependency-groups]
+dev = ["pytest>=8.4", "ruff>=0.12", "mypy>=1.17", "types-jsonschema>=4.25", "pip-audit>=2.9", "nbformat==5.11.1"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["training"]
+
+[tool.pytest.ini_options]
+testpaths = ["training/tests"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+files = ["training/contracts", "training/scripts"]

@@ -1,0 +1,753 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:aerorl:schema:replay:v1",
+  "title": "AeroRL replay v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "replay_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "origin": {
+      "enum": [
+        "training",
+        "evaluation",
+        "reference",
+        "browser"
+      ]
+    },
+    "run_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "session_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "episode_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "env_id": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "task_kind": {
+      "enum": [
+        "hover",
+        "race"
+      ]
+    },
+    "curriculum_stage": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 6
+    },
+    "reward_mode": {
+      "enum": [
+        "reliability",
+        "speed"
+      ]
+    },
+    "transition_start": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "transition_end": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "policy_revision_start": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4294967295
+    },
+    "policy_revision_end": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 4294967295
+    },
+    "checkpoint_id": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "policy_revisions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "revision": {
+            "type": "integer",
+            "minimum": 0,
+            "maximum": 4294967295
+          },
+          "actor_sha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          }
+        },
+        "required": [
+          "revision",
+          "actor_sha256"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 2700
+    },
+    "deterministic_actions": {
+      "type": "boolean"
+    },
+    "complete": {
+      "type": "boolean"
+    },
+    "interruption_reason": {
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 256
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "simulator_id": {
+      "const": "quadrotor-rk4-v1"
+    },
+    "controller_id": {
+      "const": "rate-p-v1"
+    },
+    "observation_schema_id": {
+      "const": "obs-bodyrate-v1"
+    },
+    "action_schema_id": {
+      "const": "collective-bodyrate-v1"
+    },
+    "vehicle_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "observation_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "rules_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "training_config_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "physics_hz": {
+      "const": 120
+    },
+    "policy_hz": {
+      "const": 60
+    },
+    "created_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "duration_s": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 45
+    },
+    "files": {
+      "type": "object",
+      "properties": {
+        "course.json": {
+          "type": "object",
+          "properties": {
+            "byte_length": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 67108864
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "shape": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "minItems": 0,
+              "maxItems": 2
+            },
+            "dtype": {
+              "enum": [
+                "json",
+                "float64",
+                "float32",
+                "uint32"
+              ]
+            }
+          },
+          "required": [
+            "byte_length",
+            "sha256",
+            "shape",
+            "dtype"
+          ],
+          "additionalProperties": false
+        },
+        "vehicle.json": {
+          "type": "object",
+          "properties": {
+            "byte_length": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 67108864
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "shape": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "minItems": 0,
+              "maxItems": 2
+            },
+            "dtype": {
+              "enum": [
+                "json",
+                "float64",
+                "float32",
+                "uint32"
+              ]
+            }
+          },
+          "required": [
+            "byte_length",
+            "sha256",
+            "shape",
+            "dtype"
+          ],
+          "additionalProperties": false
+        },
+        "observations.json": {
+          "type": "object",
+          "properties": {
+            "byte_length": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 67108864
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "shape": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "minItems": 0,
+              "maxItems": 2
+            },
+            "dtype": {
+              "enum": [
+                "json",
+                "float64",
+                "float32",
+                "uint32"
+              ]
+            }
+          },
+          "required": [
+            "byte_length",
+            "sha256",
+            "shape",
+            "dtype"
+          ],
+          "additionalProperties": false
+        },
+        "states.f64": {
+          "type": "object",
+          "properties": {
+            "byte_length": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 67108864
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "shape": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "minItems": 0,
+              "maxItems": 2
+            },
+            "dtype": {
+              "enum": [
+                "json",
+                "float64",
+                "float32",
+                "uint32"
+              ]
+            }
+          },
+          "required": [
+            "byte_length",
+            "sha256",
+            "shape",
+            "dtype"
+          ],
+          "additionalProperties": false
+        },
+        "physics_commands.f64": {
+          "type": "object",
+          "properties": {
+            "byte_length": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 67108864
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "shape": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "minItems": 0,
+              "maxItems": 2
+            },
+            "dtype": {
+              "enum": [
+                "json",
+                "float64",
+                "float32",
+                "uint32"
+              ]
+            }
+          },
+          "required": [
+            "byte_length",
+            "sha256",
+            "shape",
+            "dtype"
+          ],
+          "additionalProperties": false
+        },
+        "policy_inputs_actions.f32": {
+          "type": "object",
+          "properties": {
+            "byte_length": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 67108864
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "shape": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "minItems": 0,
+              "maxItems": 2
+            },
+            "dtype": {
+              "enum": [
+                "json",
+                "float64",
+                "float32",
+                "uint32"
+              ]
+            }
+          },
+          "required": [
+            "byte_length",
+            "sha256",
+            "shape",
+            "dtype"
+          ],
+          "additionalProperties": false
+        },
+        "policy_times.f64": {
+          "type": "object",
+          "properties": {
+            "byte_length": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 67108864
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "shape": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "minItems": 0,
+              "maxItems": 2
+            },
+            "dtype": {
+              "enum": [
+                "json",
+                "float64",
+                "float32",
+                "uint32"
+              ]
+            }
+          },
+          "required": [
+            "byte_length",
+            "sha256",
+            "shape",
+            "dtype"
+          ],
+          "additionalProperties": false
+        },
+        "policy_revisions.u32": {
+          "type": "object",
+          "properties": {
+            "byte_length": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 67108864
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "shape": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "minItems": 0,
+              "maxItems": 2
+            },
+            "dtype": {
+              "enum": [
+                "json",
+                "float64",
+                "float32",
+                "uint32"
+              ]
+            }
+          },
+          "required": [
+            "byte_length",
+            "sha256",
+            "shape",
+            "dtype"
+          ],
+          "additionalProperties": false
+        },
+        "rewards.f32": {
+          "type": "object",
+          "properties": {
+            "byte_length": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 67108864
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "shape": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "minItems": 0,
+              "maxItems": 2
+            },
+            "dtype": {
+              "enum": [
+                "json",
+                "float64",
+                "float32",
+                "uint32"
+              ]
+            }
+          },
+          "required": [
+            "byte_length",
+            "sha256",
+            "shape",
+            "dtype"
+          ],
+          "additionalProperties": false
+        },
+        "terminal_observation.f32": {
+          "type": "object",
+          "properties": {
+            "byte_length": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 67108864
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "shape": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "minItems": 0,
+              "maxItems": 2
+            },
+            "dtype": {
+              "enum": [
+                "json",
+                "float64",
+                "float32",
+                "uint32"
+              ]
+            }
+          },
+          "required": [
+            "byte_length",
+            "sha256",
+            "shape",
+            "dtype"
+          ],
+          "additionalProperties": false
+        },
+        "events.json": {
+          "type": "object",
+          "properties": {
+            "byte_length": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 67108864
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "shape": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "minItems": 0,
+              "maxItems": 2
+            },
+            "dtype": {
+              "enum": [
+                "json",
+                "float64",
+                "float32",
+                "uint32"
+              ]
+            }
+          },
+          "required": [
+            "byte_length",
+            "sha256",
+            "shape",
+            "dtype"
+          ],
+          "additionalProperties": false
+        },
+        "metrics.json": {
+          "type": "object",
+          "properties": {
+            "byte_length": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 67108864
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "shape": {
+              "type": "array",
+              "items": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 9007199254740991
+              },
+              "minItems": 0,
+              "maxItems": 2
+            },
+            "dtype": {
+              "enum": [
+                "json",
+                "float64",
+                "float32",
+                "uint32"
+              ]
+            }
+          },
+          "required": [
+            "byte_length",
+            "sha256",
+            "shape",
+            "dtype"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "course.json",
+        "vehicle.json",
+        "observations.json",
+        "states.f64",
+        "physics_commands.f64",
+        "policy_inputs_actions.f32",
+        "policy_times.f64",
+        "policy_revisions.u32",
+        "rewards.f32",
+        "terminal_observation.f32",
+        "events.json",
+        "metrics.json"
+      ],
+      "additionalProperties": false
+    },
+    "outcome": {
+      "enum": [
+        "success",
+        "frame_collision",
+        "ground_collision",
+        "workspace_exit",
+        "timeout",
+        "state_limit",
+        "hover_departure",
+        "user_abort",
+        "incomplete"
+      ]
+    }
+  },
+  "required": [
+    "schema_version",
+    "replay_id",
+    "origin",
+    "run_id",
+    "session_id",
+    "episode_id",
+    "env_id",
+    "task_kind",
+    "curriculum_stage",
+    "reward_mode",
+    "transition_start",
+    "transition_end",
+    "policy_revision_start",
+    "policy_revision_end",
+    "checkpoint_id",
+    "policy_revisions",
+    "deterministic_actions",
+    "complete",
+    "interruption_reason",
+    "simulator_id",
+    "controller_id",
+    "observation_schema_id",
+    "action_schema_id",
+    "vehicle_sha256",
+    "observation_sha256",
+    "rules_sha256",
+    "training_config_sha256",
+    "physics_hz",
+    "policy_hz",
+    "created_utc",
+    "duration_s",
+    "files",
+    "outcome"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "complete": {
+            "const": true
+          }
+        },
+        "required": [
+          "complete"
+        ]
+      },
+      "then": {
+        "properties": {
+          "interruption_reason": {
+            "type": "null"
+          },
+          "outcome": {
+            "not": {
+              "enum": [
+                "incomplete",
+                "user_abort"
+              ]
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "outcome": {
+            "enum": [
+              "incomplete",
+              "user_abort"
+            ]
+          },
+          "interruption_reason": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 256
+          }
+        }
+      }
+    }
+  ]
+}

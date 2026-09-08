@@ -1,0 +1,6388 @@
+[
+  {
+    "id": "vehicle-valid",
+    "schema": "vehicle",
+    "data": {
+      "schema_version": 1,
+      "simulator_id": "quadrotor-rk4-v1",
+      "controller_id": "rate-p-v1",
+      "world_frame": "right-handed-z-up",
+      "body_frame": "x-forward-y-left-z-up",
+      "quaternion_order": "wxyz",
+      "mass_kg": 0.8,
+      "gravity_mps2": 9.81,
+      "inertia_kgm2": [
+        0.005,
+        0.005,
+        0.009
+      ],
+      "arm_length_m": 0.2,
+      "rotor_max_thrust_n": 4,
+      "motor_time_constant_s": 0.03,
+      "linear_drag_kgps": 0.08,
+      "reaction_torque_per_thrust_m": 0.016,
+      "rate_gains": [
+        0.08,
+        0.08,
+        0.04
+      ],
+      "collision_radius_m": 0.3,
+      "gate_pass_margin_m": 0.05,
+      "physics_hz": 120,
+      "policy_hz": 60,
+      "geometry_epsilon_m": 1e-9,
+      "quaternion_input_tolerance": 0.000001,
+      "quaternion_min_norm": 1e-12,
+      "motor_roundoff_tolerance_n": 1e-10,
+      "state_limit_speed_mps": 100,
+      "state_limit_rate_radps": 100,
+      "action": {
+        "schema_id": "collective-bodyrate-v1",
+        "dimension": 4,
+        "minimum": -1,
+        "maximum": 1,
+        "max_collective_n": 16,
+        "max_body_rates_radps": [
+          6,
+          6,
+          3
+        ]
+      },
+      "rotors": [
+        {
+          "index": 0,
+          "position_m": [
+            0.1414213562373095,
+            0.1414213562373095,
+            0
+          ],
+          "reaction_sign": 1
+        },
+        {
+          "index": 1,
+          "position_m": [
+            -0.1414213562373095,
+            0.1414213562373095,
+            0
+          ],
+          "reaction_sign": -1
+        },
+        {
+          "index": 2,
+          "position_m": [
+            -0.1414213562373095,
+            -0.1414213562373095,
+            0
+          ],
+          "reaction_sign": 1
+        },
+        {
+          "index": 3,
+          "position_m": [
+            0.1414213562373095,
+            -0.1414213562373095,
+            0
+          ],
+          "reaction_sign": -1
+        }
+      ]
+    },
+    "accepted": true
+  },
+  {
+    "id": "vehicle-missing",
+    "schema": "vehicle",
+    "data": {
+      "simulator_id": "quadrotor-rk4-v1",
+      "controller_id": "rate-p-v1",
+      "world_frame": "right-handed-z-up",
+      "body_frame": "x-forward-y-left-z-up",
+      "quaternion_order": "wxyz",
+      "mass_kg": 0.8,
+      "gravity_mps2": 9.81,
+      "inertia_kgm2": [
+        0.005,
+        0.005,
+        0.009
+      ],
+      "arm_length_m": 0.2,
+      "rotor_max_thrust_n": 4,
+      "motor_time_constant_s": 0.03,
+      "linear_drag_kgps": 0.08,
+      "reaction_torque_per_thrust_m": 0.016,
+      "rate_gains": [
+        0.08,
+        0.08,
+        0.04
+      ],
+      "collision_radius_m": 0.3,
+      "gate_pass_margin_m": 0.05,
+      "physics_hz": 120,
+      "policy_hz": 60,
+      "geometry_epsilon_m": 1e-9,
+      "quaternion_input_tolerance": 0.000001,
+      "quaternion_min_norm": 1e-12,
+      "motor_roundoff_tolerance_n": 1e-10,
+      "state_limit_speed_mps": 100,
+      "state_limit_rate_radps": 100,
+      "action": {
+        "schema_id": "collective-bodyrate-v1",
+        "dimension": 4,
+        "minimum": -1,
+        "maximum": 1,
+        "max_collective_n": 16,
+        "max_body_rates_radps": [
+          6,
+          6,
+          3
+        ]
+      },
+      "rotors": [
+        {
+          "index": 0,
+          "position_m": [
+            0.1414213562373095,
+            0.1414213562373095,
+            0
+          ],
+          "reaction_sign": 1
+        },
+        {
+          "index": 1,
+          "position_m": [
+            -0.1414213562373095,
+            0.1414213562373095,
+            0
+          ],
+          "reaction_sign": -1
+        },
+        {
+          "index": 2,
+          "position_m": [
+            -0.1414213562373095,
+            -0.1414213562373095,
+            0
+          ],
+          "reaction_sign": 1
+        },
+        {
+          "index": 3,
+          "position_m": [
+            0.1414213562373095,
+            -0.1414213562373095,
+            0
+          ],
+          "reaction_sign": -1
+        }
+      ]
+    },
+    "accepted": false
+  },
+  {
+    "id": "vehicle-extra",
+    "schema": "vehicle",
+    "data": {
+      "schema_version": 1,
+      "simulator_id": "quadrotor-rk4-v1",
+      "controller_id": "rate-p-v1",
+      "world_frame": "right-handed-z-up",
+      "body_frame": "x-forward-y-left-z-up",
+      "quaternion_order": "wxyz",
+      "mass_kg": 0.8,
+      "gravity_mps2": 9.81,
+      "inertia_kgm2": [
+        0.005,
+        0.005,
+        0.009
+      ],
+      "arm_length_m": 0.2,
+      "rotor_max_thrust_n": 4,
+      "motor_time_constant_s": 0.03,
+      "linear_drag_kgps": 0.08,
+      "reaction_torque_per_thrust_m": 0.016,
+      "rate_gains": [
+        0.08,
+        0.08,
+        0.04
+      ],
+      "collision_radius_m": 0.3,
+      "gate_pass_margin_m": 0.05,
+      "physics_hz": 120,
+      "policy_hz": 60,
+      "geometry_epsilon_m": 1e-9,
+      "quaternion_input_tolerance": 0.000001,
+      "quaternion_min_norm": 1e-12,
+      "motor_roundoff_tolerance_n": 1e-10,
+      "state_limit_speed_mps": 100,
+      "state_limit_rate_radps": 100,
+      "action": {
+        "schema_id": "collective-bodyrate-v1",
+        "dimension": 4,
+        "minimum": -1,
+        "maximum": 1,
+        "max_collective_n": 16,
+        "max_body_rates_radps": [
+          6,
+          6,
+          3
+        ]
+      },
+      "rotors": [
+        {
+          "index": 0,
+          "position_m": [
+            0.1414213562373095,
+            0.1414213562373095,
+            0
+          ],
+          "reaction_sign": 1
+        },
+        {
+          "index": 1,
+          "position_m": [
+            -0.1414213562373095,
+            0.1414213562373095,
+            0
+          ],
+          "reaction_sign": -1
+        },
+        {
+          "index": 2,
+          "position_m": [
+            -0.1414213562373095,
+            -0.1414213562373095,
+            0
+          ],
+          "reaction_sign": 1
+        },
+        {
+          "index": 3,
+          "position_m": [
+            0.1414213562373095,
+            -0.1414213562373095,
+            0
+          ],
+          "reaction_sign": -1
+        }
+      ],
+      "unexpected": true
+    },
+    "accepted": false
+  },
+  {
+    "id": "observation-valid",
+    "schema": "observation",
+    "data": {
+      "schema_version": 1,
+      "schema_id": "obs-bodyrate-v1",
+      "dimension": 40,
+      "dtype": "float32",
+      "missing_gate_value": 0,
+      "fields": [
+        {
+          "index": 0,
+          "name": "velocity_body_x",
+          "scale": 15,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 1,
+          "name": "velocity_body_y",
+          "scale": 15,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 2,
+          "name": "velocity_body_z",
+          "scale": 15,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 3,
+          "name": "omega_body_x",
+          "scale": 12,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 4,
+          "name": "omega_body_y",
+          "scale": 12,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 5,
+          "name": "omega_body_z",
+          "scale": 12,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 6,
+          "name": "gravity_body_x",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 7,
+          "name": "gravity_body_y",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 8,
+          "name": "gravity_body_z",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 9,
+          "name": "current_gate_center_body_x",
+          "scale": 40,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 10,
+          "name": "current_gate_center_body_y",
+          "scale": 40,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 11,
+          "name": "current_gate_center_body_z",
+          "scale": 40,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 12,
+          "name": "current_gate_normal_body_x",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 13,
+          "name": "current_gate_normal_body_y",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 14,
+          "name": "current_gate_normal_body_z",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 15,
+          "name": "following_gate_center_body_x",
+          "scale": 80,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 16,
+          "name": "following_gate_center_body_y",
+          "scale": 80,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 17,
+          "name": "following_gate_center_body_z",
+          "scale": 80,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 18,
+          "name": "following_gate_normal_body_x",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 19,
+          "name": "following_gate_normal_body_y",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 20,
+          "name": "following_gate_normal_body_z",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 21,
+          "name": "ground_clearance",
+          "scale": 20,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 22,
+          "name": "previous_collective",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 23,
+          "name": "previous_roll_rate",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 24,
+          "name": "previous_pitch_rate",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 25,
+          "name": "previous_yaw_rate",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 26,
+          "name": "motor_thrust_0",
+          "scale": 4,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 27,
+          "name": "motor_thrust_1",
+          "scale": 4,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 28,
+          "name": "motor_thrust_2",
+          "scale": 4,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 29,
+          "name": "motor_thrust_3",
+          "scale": 4,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 30,
+          "name": "current_gate_present",
+          "scale": 1,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 31,
+          "name": "following_gate_present",
+          "scale": 1,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 32,
+          "name": "clearance_xmin",
+          "scale": 120,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 33,
+          "name": "clearance_xmax",
+          "scale": 120,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 34,
+          "name": "clearance_ymin",
+          "scale": 120,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 35,
+          "name": "clearance_ymax",
+          "scale": 120,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 36,
+          "name": "clearance_zmin",
+          "scale": 20,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 37,
+          "name": "clearance_zmax",
+          "scale": 20,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 38,
+          "name": "gates_remaining",
+          "scale": 10,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 39,
+          "name": "time_remaining_fraction",
+          "scale": 1,
+          "minimum": 0,
+          "maximum": 1
+        }
+      ]
+    },
+    "accepted": true
+  },
+  {
+    "id": "observation-missing",
+    "schema": "observation",
+    "data": {
+      "schema_id": "obs-bodyrate-v1",
+      "dimension": 40,
+      "dtype": "float32",
+      "missing_gate_value": 0,
+      "fields": [
+        {
+          "index": 0,
+          "name": "velocity_body_x",
+          "scale": 15,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 1,
+          "name": "velocity_body_y",
+          "scale": 15,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 2,
+          "name": "velocity_body_z",
+          "scale": 15,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 3,
+          "name": "omega_body_x",
+          "scale": 12,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 4,
+          "name": "omega_body_y",
+          "scale": 12,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 5,
+          "name": "omega_body_z",
+          "scale": 12,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 6,
+          "name": "gravity_body_x",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 7,
+          "name": "gravity_body_y",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 8,
+          "name": "gravity_body_z",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 9,
+          "name": "current_gate_center_body_x",
+          "scale": 40,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 10,
+          "name": "current_gate_center_body_y",
+          "scale": 40,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 11,
+          "name": "current_gate_center_body_z",
+          "scale": 40,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 12,
+          "name": "current_gate_normal_body_x",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 13,
+          "name": "current_gate_normal_body_y",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 14,
+          "name": "current_gate_normal_body_z",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 15,
+          "name": "following_gate_center_body_x",
+          "scale": 80,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 16,
+          "name": "following_gate_center_body_y",
+          "scale": 80,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 17,
+          "name": "following_gate_center_body_z",
+          "scale": 80,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 18,
+          "name": "following_gate_normal_body_x",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 19,
+          "name": "following_gate_normal_body_y",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 20,
+          "name": "following_gate_normal_body_z",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 21,
+          "name": "ground_clearance",
+          "scale": 20,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 22,
+          "name": "previous_collective",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 23,
+          "name": "previous_roll_rate",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 24,
+          "name": "previous_pitch_rate",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 25,
+          "name": "previous_yaw_rate",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 26,
+          "name": "motor_thrust_0",
+          "scale": 4,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 27,
+          "name": "motor_thrust_1",
+          "scale": 4,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 28,
+          "name": "motor_thrust_2",
+          "scale": 4,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 29,
+          "name": "motor_thrust_3",
+          "scale": 4,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 30,
+          "name": "current_gate_present",
+          "scale": 1,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 31,
+          "name": "following_gate_present",
+          "scale": 1,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 32,
+          "name": "clearance_xmin",
+          "scale": 120,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 33,
+          "name": "clearance_xmax",
+          "scale": 120,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 34,
+          "name": "clearance_ymin",
+          "scale": 120,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 35,
+          "name": "clearance_ymax",
+          "scale": 120,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 36,
+          "name": "clearance_zmin",
+          "scale": 20,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 37,
+          "name": "clearance_zmax",
+          "scale": 20,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 38,
+          "name": "gates_remaining",
+          "scale": 10,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 39,
+          "name": "time_remaining_fraction",
+          "scale": 1,
+          "minimum": 0,
+          "maximum": 1
+        }
+      ]
+    },
+    "accepted": false
+  },
+  {
+    "id": "observation-extra",
+    "schema": "observation",
+    "data": {
+      "schema_version": 1,
+      "schema_id": "obs-bodyrate-v1",
+      "dimension": 40,
+      "dtype": "float32",
+      "missing_gate_value": 0,
+      "fields": [
+        {
+          "index": 0,
+          "name": "velocity_body_x",
+          "scale": 15,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 1,
+          "name": "velocity_body_y",
+          "scale": 15,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 2,
+          "name": "velocity_body_z",
+          "scale": 15,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 3,
+          "name": "omega_body_x",
+          "scale": 12,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 4,
+          "name": "omega_body_y",
+          "scale": 12,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 5,
+          "name": "omega_body_z",
+          "scale": 12,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 6,
+          "name": "gravity_body_x",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 7,
+          "name": "gravity_body_y",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 8,
+          "name": "gravity_body_z",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 9,
+          "name": "current_gate_center_body_x",
+          "scale": 40,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 10,
+          "name": "current_gate_center_body_y",
+          "scale": 40,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 11,
+          "name": "current_gate_center_body_z",
+          "scale": 40,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 12,
+          "name": "current_gate_normal_body_x",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 13,
+          "name": "current_gate_normal_body_y",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 14,
+          "name": "current_gate_normal_body_z",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 15,
+          "name": "following_gate_center_body_x",
+          "scale": 80,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 16,
+          "name": "following_gate_center_body_y",
+          "scale": 80,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 17,
+          "name": "following_gate_center_body_z",
+          "scale": 80,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 18,
+          "name": "following_gate_normal_body_x",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 19,
+          "name": "following_gate_normal_body_y",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 20,
+          "name": "following_gate_normal_body_z",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 21,
+          "name": "ground_clearance",
+          "scale": 20,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 22,
+          "name": "previous_collective",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 23,
+          "name": "previous_roll_rate",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 24,
+          "name": "previous_pitch_rate",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 25,
+          "name": "previous_yaw_rate",
+          "scale": 1,
+          "minimum": -1,
+          "maximum": 1
+        },
+        {
+          "index": 26,
+          "name": "motor_thrust_0",
+          "scale": 4,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 27,
+          "name": "motor_thrust_1",
+          "scale": 4,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 28,
+          "name": "motor_thrust_2",
+          "scale": 4,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 29,
+          "name": "motor_thrust_3",
+          "scale": 4,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 30,
+          "name": "current_gate_present",
+          "scale": 1,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 31,
+          "name": "following_gate_present",
+          "scale": 1,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 32,
+          "name": "clearance_xmin",
+          "scale": 120,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 33,
+          "name": "clearance_xmax",
+          "scale": 120,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 34,
+          "name": "clearance_ymin",
+          "scale": 120,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 35,
+          "name": "clearance_ymax",
+          "scale": 120,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 36,
+          "name": "clearance_zmin",
+          "scale": 20,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 37,
+          "name": "clearance_zmax",
+          "scale": 20,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 38,
+          "name": "gates_remaining",
+          "scale": 10,
+          "minimum": 0,
+          "maximum": 1
+        },
+        {
+          "index": 39,
+          "name": "time_remaining_fraction",
+          "scale": 1,
+          "minimum": 0,
+          "maximum": 1
+        }
+      ],
+      "unexpected": true
+    },
+    "accepted": false
+  },
+  {
+    "id": "course-rules-valid",
+    "schema": "course-rules",
+    "data": {
+      "schema_version": 1,
+      "rules_id": "course-rules-v1",
+      "standard_gate_count": 10,
+      "workspace_min_m": [
+        -60,
+        -60,
+        0
+      ],
+      "workspace_max_m": [
+        60,
+        60,
+        20
+      ],
+      "gate": {
+        "width_m": 2.5,
+        "height_m": 2.5,
+        "frame_bar_m": 0.1,
+        "frame_depth_m": 0.1
+      },
+      "gate_center_height_m": [
+        3,
+        10
+      ],
+      "horizontal_spacing_m": [
+        6,
+        8
+      ],
+      "max_height_change_m": 1.5,
+      "max_turn_rad": 0.5235987755982988,
+      "max_approach_rad": 0.17453292519943295,
+      "max_outgoing_rad": 0.6981317007977318,
+      "max_heading_drift_rad": 1.0471975511965976,
+      "frame_boundary_margin_m": 0.5,
+      "frame_aabb_expansion_m": 0.3,
+      "route_intersection_height_m": 3,
+      "start_max_height_change_m": 0.25,
+      "timeouts_s": {
+        "hover": 5,
+        "one_gate": 12,
+        "three_gates": 20,
+        "ten_gates": 45
+      },
+      "generator": {
+        "version": "course-generator-v1",
+        "uuid_namespace": "ca2d61ea-1dc2-4bd4-894e-d6a8a29e41f1",
+        "max_proposals": 512,
+        "max_reset_proposals": 64,
+        "start_height_m": [
+          4,
+          6
+        ],
+        "hover_xy_m": [
+          -10,
+          10
+        ]
+      }
+    },
+    "accepted": true
+  },
+  {
+    "id": "course-rules-missing",
+    "schema": "course-rules",
+    "data": {
+      "rules_id": "course-rules-v1",
+      "standard_gate_count": 10,
+      "workspace_min_m": [
+        -60,
+        -60,
+        0
+      ],
+      "workspace_max_m": [
+        60,
+        60,
+        20
+      ],
+      "gate": {
+        "width_m": 2.5,
+        "height_m": 2.5,
+        "frame_bar_m": 0.1,
+        "frame_depth_m": 0.1
+      },
+      "gate_center_height_m": [
+        3,
+        10
+      ],
+      "horizontal_spacing_m": [
+        6,
+        8
+      ],
+      "max_height_change_m": 1.5,
+      "max_turn_rad": 0.5235987755982988,
+      "max_approach_rad": 0.17453292519943295,
+      "max_outgoing_rad": 0.6981317007977318,
+      "max_heading_drift_rad": 1.0471975511965976,
+      "frame_boundary_margin_m": 0.5,
+      "frame_aabb_expansion_m": 0.3,
+      "route_intersection_height_m": 3,
+      "start_max_height_change_m": 0.25,
+      "timeouts_s": {
+        "hover": 5,
+        "one_gate": 12,
+        "three_gates": 20,
+        "ten_gates": 45
+      },
+      "generator": {
+        "version": "course-generator-v1",
+        "uuid_namespace": "ca2d61ea-1dc2-4bd4-894e-d6a8a29e41f1",
+        "max_proposals": 512,
+        "max_reset_proposals": 64,
+        "start_height_m": [
+          4,
+          6
+        ],
+        "hover_xy_m": [
+          -10,
+          10
+        ]
+      }
+    },
+    "accepted": false
+  },
+  {
+    "id": "course-rules-extra",
+    "schema": "course-rules",
+    "data": {
+      "schema_version": 1,
+      "rules_id": "course-rules-v1",
+      "standard_gate_count": 10,
+      "workspace_min_m": [
+        -60,
+        -60,
+        0
+      ],
+      "workspace_max_m": [
+        60,
+        60,
+        20
+      ],
+      "gate": {
+        "width_m": 2.5,
+        "height_m": 2.5,
+        "frame_bar_m": 0.1,
+        "frame_depth_m": 0.1
+      },
+      "gate_center_height_m": [
+        3,
+        10
+      ],
+      "horizontal_spacing_m": [
+        6,
+        8
+      ],
+      "max_height_change_m": 1.5,
+      "max_turn_rad": 0.5235987755982988,
+      "max_approach_rad": 0.17453292519943295,
+      "max_outgoing_rad": 0.6981317007977318,
+      "max_heading_drift_rad": 1.0471975511965976,
+      "frame_boundary_margin_m": 0.5,
+      "frame_aabb_expansion_m": 0.3,
+      "route_intersection_height_m": 3,
+      "start_max_height_change_m": 0.25,
+      "timeouts_s": {
+        "hover": 5,
+        "one_gate": 12,
+        "three_gates": 20,
+        "ten_gates": 45
+      },
+      "generator": {
+        "version": "course-generator-v1",
+        "uuid_namespace": "ca2d61ea-1dc2-4bd4-894e-d6a8a29e41f1",
+        "max_proposals": 512,
+        "max_reset_proposals": 64,
+        "start_height_m": [
+          4,
+          6
+        ],
+        "hover_xy_m": [
+          -10,
+          10
+        ]
+      },
+      "unexpected": true
+    },
+    "accepted": false
+  },
+  {
+    "id": "training-valid",
+    "schema": "training",
+    "data": {
+      "schema_version": 1,
+      "config_id": "training-v1",
+      "ppo": {
+        "algorithm": "PPO",
+        "policy": "MlpPolicy",
+        "actor_layers": [
+          256,
+          256
+        ],
+        "critic_layers": [
+          256,
+          256
+        ],
+        "activation": "Tanh",
+        "orthogonal_init": true,
+        "log_std_init": -1,
+        "device": "cpu",
+        "environment_candidates": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "n_steps": 2048,
+        "batch_size": 512,
+        "n_epochs": 10,
+        "gamma": 0.999,
+        "gae_lambda": 0.95,
+        "clip_range": 0.2,
+        "clip_range_vf": null,
+        "normalize_advantage": true,
+        "ent_coef": 0,
+        "vf_coef": 0.5,
+        "max_grad_norm": 0.5,
+        "target_kl": 0.03,
+        "use_sde": false,
+        "stats_window_size": 100,
+        "vec_normalize": false,
+        "budget_transitions": 10000000,
+        "learning_rate": {
+          "start": 0.0003,
+          "end": 0.00003,
+          "schedule": "global-linear"
+        }
+      },
+      "curriculum": {
+        "frontier_probability": 0.8,
+        "previous_probability": 0.2,
+        "promotion_interval_transitions": 131072,
+        "promotion_cases": 64,
+        "promotion_successes": 61,
+        "consecutive_passes": 2,
+        "min_frontier_transitions": 131072,
+        "speed_completion_threshold": 0.95,
+        "stages": [
+          {
+            "index": 0,
+            "task_kind": "hover",
+            "gate_count": 0,
+            "max_turn_rad": 0,
+            "max_height_change_m": 0,
+            "yaw_jitter_rad": 0,
+            "position_perturbation_m": 0.1,
+            "velocity_perturbation_mps": 0.1,
+            "tilt_perturbation_rad": 0.05235987755982988,
+            "yaw_perturbation_rad": 0.08726646259971647,
+            "rate_perturbation_radps": 0.1
+          },
+          {
+            "index": 1,
+            "task_kind": "race",
+            "gate_count": 1,
+            "max_turn_rad": 0,
+            "max_height_change_m": 0,
+            "yaw_jitter_rad": 0,
+            "position_perturbation_m": 0.1,
+            "velocity_perturbation_mps": 0.1,
+            "tilt_perturbation_rad": 0.05235987755982988,
+            "yaw_perturbation_rad": 0.08726646259971647,
+            "rate_perturbation_radps": 0.1
+          },
+          {
+            "index": 2,
+            "task_kind": "race",
+            "gate_count": 1,
+            "max_turn_rad": 0,
+            "max_height_change_m": 0.25,
+            "yaw_jitter_rad": 0.08726646259971647,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          },
+          {
+            "index": 3,
+            "task_kind": "race",
+            "gate_count": 3,
+            "max_turn_rad": 0,
+            "max_height_change_m": 0,
+            "yaw_jitter_rad": 0,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          },
+          {
+            "index": 4,
+            "task_kind": "race",
+            "gate_count": 3,
+            "max_turn_rad": 0.2617993877991494,
+            "max_height_change_m": 0.5,
+            "yaw_jitter_rad": 0.08726646259971647,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          },
+          {
+            "index": 5,
+            "task_kind": "race",
+            "gate_count": 10,
+            "max_turn_rad": 0.3490658503988659,
+            "max_height_change_m": 0.75,
+            "yaw_jitter_rad": 0.08726646259971647,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          },
+          {
+            "index": 6,
+            "task_kind": "race",
+            "gate_count": 10,
+            "max_turn_rad": 0.5235987755982988,
+            "max_height_change_m": 1.5,
+            "yaw_jitter_rad": 0.17453292519943295,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          }
+        ]
+      },
+      "reward": {
+        "progress_per_m": 0.5,
+        "gate_bonus": 10,
+        "finish_bonus": 50,
+        "reliability_time_per_s": 0.2,
+        "speed_time_per_s": 0.5,
+        "smoothness": 0.02,
+        "failure_cost": 50,
+        "hover": {
+          "alive_per_s": 1,
+          "position_cost": 0.5,
+          "velocity_cost": 0.1,
+          "tilt_cost": 0.1,
+          "rate_cost": 0.02,
+          "smoothness": 0.02,
+          "departure_m": 1,
+          "departure_tilt_rad": 0.5235987755982988,
+          "success_bonus": 5,
+          "failure_cost": 5
+        }
+      },
+      "evaluation": {
+        "root_seeds": [
+          101,
+          202,
+          303
+        ],
+        "promotion_namespace": 10001,
+        "development_namespace": 20001,
+        "final_namespace": 30001,
+        "stress_namespace": 40001,
+        "public_namespace": 50001,
+        "development_cases": 512,
+        "final_cases": 1000,
+        "stress_cases": 100,
+        "public_cases": 12,
+        "release_completion": 0.95,
+        "reproducibility_completion": 0.9
+      },
+      "checkpoint": {
+        "interval_transitions": 32768,
+        "keep_latest": 2,
+        "wall_budget_s": 36000
+      },
+      "recording": {
+        "training_cap_bytes": 1073741824,
+        "evaluation_cap_bytes": 1073741824,
+        "diagnostics_cap_bytes": 33554432,
+        "window_transitions": 1000000,
+        "per_bucket": 2,
+        "writer_queue": 8,
+        "evaluation_comparison_cases": 16,
+        "final_per_outcome": 32,
+        "priority_version": "retention-v1"
+      }
+    },
+    "accepted": true
+  },
+  {
+    "id": "training-missing",
+    "schema": "training",
+    "data": {
+      "config_id": "training-v1",
+      "ppo": {
+        "algorithm": "PPO",
+        "policy": "MlpPolicy",
+        "actor_layers": [
+          256,
+          256
+        ],
+        "critic_layers": [
+          256,
+          256
+        ],
+        "activation": "Tanh",
+        "orthogonal_init": true,
+        "log_std_init": -1,
+        "device": "cpu",
+        "environment_candidates": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "n_steps": 2048,
+        "batch_size": 512,
+        "n_epochs": 10,
+        "gamma": 0.999,
+        "gae_lambda": 0.95,
+        "clip_range": 0.2,
+        "clip_range_vf": null,
+        "normalize_advantage": true,
+        "ent_coef": 0,
+        "vf_coef": 0.5,
+        "max_grad_norm": 0.5,
+        "target_kl": 0.03,
+        "use_sde": false,
+        "stats_window_size": 100,
+        "vec_normalize": false,
+        "budget_transitions": 10000000,
+        "learning_rate": {
+          "start": 0.0003,
+          "end": 0.00003,
+          "schedule": "global-linear"
+        }
+      },
+      "curriculum": {
+        "frontier_probability": 0.8,
+        "previous_probability": 0.2,
+        "promotion_interval_transitions": 131072,
+        "promotion_cases": 64,
+        "promotion_successes": 61,
+        "consecutive_passes": 2,
+        "min_frontier_transitions": 131072,
+        "speed_completion_threshold": 0.95,
+        "stages": [
+          {
+            "index": 0,
+            "task_kind": "hover",
+            "gate_count": 0,
+            "max_turn_rad": 0,
+            "max_height_change_m": 0,
+            "yaw_jitter_rad": 0,
+            "position_perturbation_m": 0.1,
+            "velocity_perturbation_mps": 0.1,
+            "tilt_perturbation_rad": 0.05235987755982988,
+            "yaw_perturbation_rad": 0.08726646259971647,
+            "rate_perturbation_radps": 0.1
+          },
+          {
+            "index": 1,
+            "task_kind": "race",
+            "gate_count": 1,
+            "max_turn_rad": 0,
+            "max_height_change_m": 0,
+            "yaw_jitter_rad": 0,
+            "position_perturbation_m": 0.1,
+            "velocity_perturbation_mps": 0.1,
+            "tilt_perturbation_rad": 0.05235987755982988,
+            "yaw_perturbation_rad": 0.08726646259971647,
+            "rate_perturbation_radps": 0.1
+          },
+          {
+            "index": 2,
+            "task_kind": "race",
+            "gate_count": 1,
+            "max_turn_rad": 0,
+            "max_height_change_m": 0.25,
+            "yaw_jitter_rad": 0.08726646259971647,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          },
+          {
+            "index": 3,
+            "task_kind": "race",
+            "gate_count": 3,
+            "max_turn_rad": 0,
+            "max_height_change_m": 0,
+            "yaw_jitter_rad": 0,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          },
+          {
+            "index": 4,
+            "task_kind": "race",
+            "gate_count": 3,
+            "max_turn_rad": 0.2617993877991494,
+            "max_height_change_m": 0.5,
+            "yaw_jitter_rad": 0.08726646259971647,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          },
+          {
+            "index": 5,
+            "task_kind": "race",
+            "gate_count": 10,
+            "max_turn_rad": 0.3490658503988659,
+            "max_height_change_m": 0.75,
+            "yaw_jitter_rad": 0.08726646259971647,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          },
+          {
+            "index": 6,
+            "task_kind": "race",
+            "gate_count": 10,
+            "max_turn_rad": 0.5235987755982988,
+            "max_height_change_m": 1.5,
+            "yaw_jitter_rad": 0.17453292519943295,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          }
+        ]
+      },
+      "reward": {
+        "progress_per_m": 0.5,
+        "gate_bonus": 10,
+        "finish_bonus": 50,
+        "reliability_time_per_s": 0.2,
+        "speed_time_per_s": 0.5,
+        "smoothness": 0.02,
+        "failure_cost": 50,
+        "hover": {
+          "alive_per_s": 1,
+          "position_cost": 0.5,
+          "velocity_cost": 0.1,
+          "tilt_cost": 0.1,
+          "rate_cost": 0.02,
+          "smoothness": 0.02,
+          "departure_m": 1,
+          "departure_tilt_rad": 0.5235987755982988,
+          "success_bonus": 5,
+          "failure_cost": 5
+        }
+      },
+      "evaluation": {
+        "root_seeds": [
+          101,
+          202,
+          303
+        ],
+        "promotion_namespace": 10001,
+        "development_namespace": 20001,
+        "final_namespace": 30001,
+        "stress_namespace": 40001,
+        "public_namespace": 50001,
+        "development_cases": 512,
+        "final_cases": 1000,
+        "stress_cases": 100,
+        "public_cases": 12,
+        "release_completion": 0.95,
+        "reproducibility_completion": 0.9
+      },
+      "checkpoint": {
+        "interval_transitions": 32768,
+        "keep_latest": 2,
+        "wall_budget_s": 36000
+      },
+      "recording": {
+        "training_cap_bytes": 1073741824,
+        "evaluation_cap_bytes": 1073741824,
+        "diagnostics_cap_bytes": 33554432,
+        "window_transitions": 1000000,
+        "per_bucket": 2,
+        "writer_queue": 8,
+        "evaluation_comparison_cases": 16,
+        "final_per_outcome": 32,
+        "priority_version": "retention-v1"
+      }
+    },
+    "accepted": false
+  },
+  {
+    "id": "training-extra",
+    "schema": "training",
+    "data": {
+      "schema_version": 1,
+      "config_id": "training-v1",
+      "ppo": {
+        "algorithm": "PPO",
+        "policy": "MlpPolicy",
+        "actor_layers": [
+          256,
+          256
+        ],
+        "critic_layers": [
+          256,
+          256
+        ],
+        "activation": "Tanh",
+        "orthogonal_init": true,
+        "log_std_init": -1,
+        "device": "cpu",
+        "environment_candidates": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "n_steps": 2048,
+        "batch_size": 512,
+        "n_epochs": 10,
+        "gamma": 0.999,
+        "gae_lambda": 0.95,
+        "clip_range": 0.2,
+        "clip_range_vf": null,
+        "normalize_advantage": true,
+        "ent_coef": 0,
+        "vf_coef": 0.5,
+        "max_grad_norm": 0.5,
+        "target_kl": 0.03,
+        "use_sde": false,
+        "stats_window_size": 100,
+        "vec_normalize": false,
+        "budget_transitions": 10000000,
+        "learning_rate": {
+          "start": 0.0003,
+          "end": 0.00003,
+          "schedule": "global-linear"
+        }
+      },
+      "curriculum": {
+        "frontier_probability": 0.8,
+        "previous_probability": 0.2,
+        "promotion_interval_transitions": 131072,
+        "promotion_cases": 64,
+        "promotion_successes": 61,
+        "consecutive_passes": 2,
+        "min_frontier_transitions": 131072,
+        "speed_completion_threshold": 0.95,
+        "stages": [
+          {
+            "index": 0,
+            "task_kind": "hover",
+            "gate_count": 0,
+            "max_turn_rad": 0,
+            "max_height_change_m": 0,
+            "yaw_jitter_rad": 0,
+            "position_perturbation_m": 0.1,
+            "velocity_perturbation_mps": 0.1,
+            "tilt_perturbation_rad": 0.05235987755982988,
+            "yaw_perturbation_rad": 0.08726646259971647,
+            "rate_perturbation_radps": 0.1
+          },
+          {
+            "index": 1,
+            "task_kind": "race",
+            "gate_count": 1,
+            "max_turn_rad": 0,
+            "max_height_change_m": 0,
+            "yaw_jitter_rad": 0,
+            "position_perturbation_m": 0.1,
+            "velocity_perturbation_mps": 0.1,
+            "tilt_perturbation_rad": 0.05235987755982988,
+            "yaw_perturbation_rad": 0.08726646259971647,
+            "rate_perturbation_radps": 0.1
+          },
+          {
+            "index": 2,
+            "task_kind": "race",
+            "gate_count": 1,
+            "max_turn_rad": 0,
+            "max_height_change_m": 0.25,
+            "yaw_jitter_rad": 0.08726646259971647,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          },
+          {
+            "index": 3,
+            "task_kind": "race",
+            "gate_count": 3,
+            "max_turn_rad": 0,
+            "max_height_change_m": 0,
+            "yaw_jitter_rad": 0,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          },
+          {
+            "index": 4,
+            "task_kind": "race",
+            "gate_count": 3,
+            "max_turn_rad": 0.2617993877991494,
+            "max_height_change_m": 0.5,
+            "yaw_jitter_rad": 0.08726646259971647,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          },
+          {
+            "index": 5,
+            "task_kind": "race",
+            "gate_count": 10,
+            "max_turn_rad": 0.3490658503988659,
+            "max_height_change_m": 0.75,
+            "yaw_jitter_rad": 0.08726646259971647,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          },
+          {
+            "index": 6,
+            "task_kind": "race",
+            "gate_count": 10,
+            "max_turn_rad": 0.5235987755982988,
+            "max_height_change_m": 1.5,
+            "yaw_jitter_rad": 0.17453292519943295,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          }
+        ]
+      },
+      "reward": {
+        "progress_per_m": 0.5,
+        "gate_bonus": 10,
+        "finish_bonus": 50,
+        "reliability_time_per_s": 0.2,
+        "speed_time_per_s": 0.5,
+        "smoothness": 0.02,
+        "failure_cost": 50,
+        "hover": {
+          "alive_per_s": 1,
+          "position_cost": 0.5,
+          "velocity_cost": 0.1,
+          "tilt_cost": 0.1,
+          "rate_cost": 0.02,
+          "smoothness": 0.02,
+          "departure_m": 1,
+          "departure_tilt_rad": 0.5235987755982988,
+          "success_bonus": 5,
+          "failure_cost": 5
+        }
+      },
+      "evaluation": {
+        "root_seeds": [
+          101,
+          202,
+          303
+        ],
+        "promotion_namespace": 10001,
+        "development_namespace": 20001,
+        "final_namespace": 30001,
+        "stress_namespace": 40001,
+        "public_namespace": 50001,
+        "development_cases": 512,
+        "final_cases": 1000,
+        "stress_cases": 100,
+        "public_cases": 12,
+        "release_completion": 0.95,
+        "reproducibility_completion": 0.9
+      },
+      "checkpoint": {
+        "interval_transitions": 32768,
+        "keep_latest": 2,
+        "wall_budget_s": 36000
+      },
+      "recording": {
+        "training_cap_bytes": 1073741824,
+        "evaluation_cap_bytes": 1073741824,
+        "diagnostics_cap_bytes": 33554432,
+        "window_transitions": 1000000,
+        "per_bucket": 2,
+        "writer_queue": 8,
+        "evaluation_comparison_cases": 16,
+        "final_per_outcome": 32,
+        "priority_version": "retention-v1"
+      },
+      "unexpected": true
+    },
+    "accepted": false
+  },
+  {
+    "id": "state-valid",
+    "schema": "state",
+    "data": {
+      "position_m": [
+        -35,
+        0,
+        5
+      ],
+      "quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "velocity_world_mps": [
+        0,
+        0,
+        0
+      ],
+      "omega_body_radps": [
+        0,
+        0,
+        0
+      ],
+      "motor_thrust_n": [
+        1.962,
+        1.962,
+        1.962,
+        1.962
+      ]
+    },
+    "accepted": true
+  },
+  {
+    "id": "state-missing",
+    "schema": "state",
+    "data": {
+      "quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "velocity_world_mps": [
+        0,
+        0,
+        0
+      ],
+      "omega_body_radps": [
+        0,
+        0,
+        0
+      ],
+      "motor_thrust_n": [
+        1.962,
+        1.962,
+        1.962,
+        1.962
+      ]
+    },
+    "accepted": false
+  },
+  {
+    "id": "state-extra",
+    "schema": "state",
+    "data": {
+      "position_m": [
+        -35,
+        0,
+        5
+      ],
+      "quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "velocity_world_mps": [
+        0,
+        0,
+        0
+      ],
+      "omega_body_radps": [
+        0,
+        0,
+        0
+      ],
+      "motor_thrust_n": [
+        1.962,
+        1.962,
+        1.962,
+        1.962
+      ],
+      "unexpected": true
+    },
+    "accepted": false
+  },
+  {
+    "id": "course-valid",
+    "schema": "course",
+    "data": {
+      "schema_version": 1,
+      "course_id": "00000000-0000-4000-8000-000000000001",
+      "name": "Contract fixture — straight",
+      "mode": "standard",
+      "gates": [
+        {
+          "id": "00000000-0000-4000-8000-000000000010",
+          "label": 1,
+          "center_m": [
+            -28,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000011",
+          "label": 2,
+          "center_m": [
+            -21,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000012",
+          "label": 3,
+          "center_m": [
+            -14,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000013",
+          "label": 4,
+          "center_m": [
+            -7,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000014",
+          "label": 5,
+          "center_m": [
+            0,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000015",
+          "label": 6,
+          "center_m": [
+            7,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000016",
+          "label": 7,
+          "center_m": [
+            14,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000017",
+          "label": 8,
+          "center_m": [
+            21,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000018",
+          "label": 9,
+          "center_m": [
+            28,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000019",
+          "label": 10,
+          "center_m": [
+            35,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        }
+      ],
+      "initial_state": {
+        "position_m": [
+          -35,
+          0,
+          5
+        ],
+        "quaternion_wxyz": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "velocity_world_mps": [
+          0,
+          0,
+          0
+        ],
+        "omega_body_radps": [
+          0,
+          0,
+          0
+        ],
+        "motor_thrust_n": [
+          1.962,
+          1.962,
+          1.962,
+          1.962
+        ]
+      },
+      "start_reference_m": [
+        -35,
+        0,
+        5
+      ],
+      "generator": null,
+      "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "accepted": true
+  },
+  {
+    "id": "course-missing",
+    "schema": "course",
+    "data": {
+      "course_id": "00000000-0000-4000-8000-000000000001",
+      "name": "Contract fixture — straight",
+      "mode": "standard",
+      "gates": [
+        {
+          "id": "00000000-0000-4000-8000-000000000010",
+          "label": 1,
+          "center_m": [
+            -28,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000011",
+          "label": 2,
+          "center_m": [
+            -21,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000012",
+          "label": 3,
+          "center_m": [
+            -14,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000013",
+          "label": 4,
+          "center_m": [
+            -7,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000014",
+          "label": 5,
+          "center_m": [
+            0,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000015",
+          "label": 6,
+          "center_m": [
+            7,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000016",
+          "label": 7,
+          "center_m": [
+            14,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000017",
+          "label": 8,
+          "center_m": [
+            21,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000018",
+          "label": 9,
+          "center_m": [
+            28,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000019",
+          "label": 10,
+          "center_m": [
+            35,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        }
+      ],
+      "initial_state": {
+        "position_m": [
+          -35,
+          0,
+          5
+        ],
+        "quaternion_wxyz": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "velocity_world_mps": [
+          0,
+          0,
+          0
+        ],
+        "omega_body_radps": [
+          0,
+          0,
+          0
+        ],
+        "motor_thrust_n": [
+          1.962,
+          1.962,
+          1.962,
+          1.962
+        ]
+      },
+      "start_reference_m": [
+        -35,
+        0,
+        5
+      ],
+      "generator": null,
+      "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "accepted": false
+  },
+  {
+    "id": "course-extra",
+    "schema": "course",
+    "data": {
+      "schema_version": 1,
+      "course_id": "00000000-0000-4000-8000-000000000001",
+      "name": "Contract fixture — straight",
+      "mode": "standard",
+      "gates": [
+        {
+          "id": "00000000-0000-4000-8000-000000000010",
+          "label": 1,
+          "center_m": [
+            -28,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000011",
+          "label": 2,
+          "center_m": [
+            -21,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000012",
+          "label": 3,
+          "center_m": [
+            -14,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000013",
+          "label": 4,
+          "center_m": [
+            -7,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000014",
+          "label": 5,
+          "center_m": [
+            0,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000015",
+          "label": 6,
+          "center_m": [
+            7,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000016",
+          "label": 7,
+          "center_m": [
+            14,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000017",
+          "label": 8,
+          "center_m": [
+            21,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000018",
+          "label": 9,
+          "center_m": [
+            28,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000019",
+          "label": 10,
+          "center_m": [
+            35,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        }
+      ],
+      "initial_state": {
+        "position_m": [
+          -35,
+          0,
+          5
+        ],
+        "quaternion_wxyz": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "velocity_world_mps": [
+          0,
+          0,
+          0
+        ],
+        "omega_body_radps": [
+          0,
+          0,
+          0
+        ],
+        "motor_thrust_n": [
+          1.962,
+          1.962,
+          1.962,
+          1.962
+        ]
+      },
+      "start_reference_m": [
+        -35,
+        0,
+        5
+      ],
+      "generator": null,
+      "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "unexpected": true
+    },
+    "accepted": false
+  },
+  {
+    "id": "model-valid",
+    "schema": "model",
+    "data": {
+      "schema_version": 1,
+      "model_id": "00000000-0000-4000-8000-000000000002",
+      "created_utc": "2026-09-06T00:00:00Z",
+      "training_run_id": "00000000-0000-4000-8000-000000000003",
+      "checkpoint_id": "00000000-0000-4000-8000-000000000004",
+      "training_transitions": 0,
+      "training_seed": 101,
+      "code_commit": "0000000000000000000000000000000000000000",
+      "actor_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "actor_file": "actor.onnx",
+      "onnx_opset": 17,
+      "input_name": "obs",
+      "input_shape": [
+        1,
+        40
+      ],
+      "output_name": "action",
+      "output_shape": [
+        1,
+        4
+      ],
+      "dtype": "float32",
+      "observation_schema_id": "obs-bodyrate-v1",
+      "action_schema_id": "collective-bodyrate-v1",
+      "simulator_id": "quadrotor-rk4-v1",
+      "controller_id": "rate-p-v1",
+      "vehicle_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "observation_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "training_config_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "physics_hz": 120,
+      "policy_hz": 60,
+      "python_lock_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "javascript_lock_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "evaluation_report_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "license": "UNLICENSED test fixture, no model weights"
+    },
+    "accepted": true
+  },
+  {
+    "id": "model-missing",
+    "schema": "model",
+    "data": {
+      "model_id": "00000000-0000-4000-8000-000000000002",
+      "created_utc": "2026-09-06T00:00:00Z",
+      "training_run_id": "00000000-0000-4000-8000-000000000003",
+      "checkpoint_id": "00000000-0000-4000-8000-000000000004",
+      "training_transitions": 0,
+      "training_seed": 101,
+      "code_commit": "0000000000000000000000000000000000000000",
+      "actor_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "actor_file": "actor.onnx",
+      "onnx_opset": 17,
+      "input_name": "obs",
+      "input_shape": [
+        1,
+        40
+      ],
+      "output_name": "action",
+      "output_shape": [
+        1,
+        4
+      ],
+      "dtype": "float32",
+      "observation_schema_id": "obs-bodyrate-v1",
+      "action_schema_id": "collective-bodyrate-v1",
+      "simulator_id": "quadrotor-rk4-v1",
+      "controller_id": "rate-p-v1",
+      "vehicle_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "observation_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "training_config_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "physics_hz": 120,
+      "policy_hz": 60,
+      "python_lock_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "javascript_lock_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "evaluation_report_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "license": "UNLICENSED test fixture, no model weights"
+    },
+    "accepted": false
+  },
+  {
+    "id": "model-extra",
+    "schema": "model",
+    "data": {
+      "schema_version": 1,
+      "model_id": "00000000-0000-4000-8000-000000000002",
+      "created_utc": "2026-09-06T00:00:00Z",
+      "training_run_id": "00000000-0000-4000-8000-000000000003",
+      "checkpoint_id": "00000000-0000-4000-8000-000000000004",
+      "training_transitions": 0,
+      "training_seed": 101,
+      "code_commit": "0000000000000000000000000000000000000000",
+      "actor_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "actor_file": "actor.onnx",
+      "onnx_opset": 17,
+      "input_name": "obs",
+      "input_shape": [
+        1,
+        40
+      ],
+      "output_name": "action",
+      "output_shape": [
+        1,
+        4
+      ],
+      "dtype": "float32",
+      "observation_schema_id": "obs-bodyrate-v1",
+      "action_schema_id": "collective-bodyrate-v1",
+      "simulator_id": "quadrotor-rk4-v1",
+      "controller_id": "rate-p-v1",
+      "vehicle_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "observation_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "training_config_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "physics_hz": 120,
+      "policy_hz": 60,
+      "python_lock_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "javascript_lock_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "evaluation_report_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "license": "UNLICENSED test fixture, no model weights",
+      "unexpected": true
+    },
+    "accepted": false
+  },
+  {
+    "id": "replay-valid",
+    "schema": "replay",
+    "data": {
+      "schema_version": 1,
+      "replay_id": "00000000-0000-4000-8000-000000000005",
+      "origin": "evaluation",
+      "run_id": "00000000-0000-4000-8000-000000000003",
+      "session_id": "00000000-0000-4000-8000-000000000006",
+      "episode_id": "00000000-0000-4000-8000-000000000007",
+      "env_id": 0,
+      "task_kind": "race",
+      "curriculum_stage": 6,
+      "reward_mode": "reliability",
+      "transition_start": 0,
+      "transition_end": 1,
+      "policy_revision_start": 0,
+      "policy_revision_end": 0,
+      "checkpoint_id": "00000000-0000-4000-8000-000000000004",
+      "policy_revisions": [
+        {
+          "revision": 0,
+          "actor_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "deterministic_actions": true,
+      "complete": true,
+      "interruption_reason": null,
+      "simulator_id": "quadrotor-rk4-v1",
+      "controller_id": "rate-p-v1",
+      "observation_schema_id": "obs-bodyrate-v1",
+      "action_schema_id": "collective-bodyrate-v1",
+      "vehicle_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "observation_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "training_config_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "physics_hz": 120,
+      "policy_hz": 60,
+      "created_utc": "2026-09-06T00:00:00Z",
+      "duration_s": 0.016666666666666666,
+      "files": {
+        "course.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        },
+        "vehicle.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        },
+        "observations.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        },
+        "states.f64": {
+          "dtype": "float64",
+          "shape": [
+            3,
+            18
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 432
+        },
+        "physics_commands.f64": {
+          "dtype": "float64",
+          "shape": [
+            2,
+            6
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 96
+        },
+        "policy_inputs_actions.f32": {
+          "dtype": "float32",
+          "shape": [
+            1,
+            52
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 208
+        },
+        "policy_times.f64": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 16
+        },
+        "policy_revisions.u32": {
+          "dtype": "uint32",
+          "shape": [
+            1
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 4
+        },
+        "rewards.f32": {
+          "dtype": "float32",
+          "shape": [
+            1,
+            7
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 28
+        },
+        "terminal_observation.f32": {
+          "dtype": "float32",
+          "shape": [
+            40
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 160
+        },
+        "events.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        },
+        "metrics.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        }
+      },
+      "outcome": "timeout"
+    },
+    "accepted": true
+  },
+  {
+    "id": "replay-missing",
+    "schema": "replay",
+    "data": {
+      "replay_id": "00000000-0000-4000-8000-000000000005",
+      "origin": "evaluation",
+      "run_id": "00000000-0000-4000-8000-000000000003",
+      "session_id": "00000000-0000-4000-8000-000000000006",
+      "episode_id": "00000000-0000-4000-8000-000000000007",
+      "env_id": 0,
+      "task_kind": "race",
+      "curriculum_stage": 6,
+      "reward_mode": "reliability",
+      "transition_start": 0,
+      "transition_end": 1,
+      "policy_revision_start": 0,
+      "policy_revision_end": 0,
+      "checkpoint_id": "00000000-0000-4000-8000-000000000004",
+      "policy_revisions": [
+        {
+          "revision": 0,
+          "actor_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "deterministic_actions": true,
+      "complete": true,
+      "interruption_reason": null,
+      "simulator_id": "quadrotor-rk4-v1",
+      "controller_id": "rate-p-v1",
+      "observation_schema_id": "obs-bodyrate-v1",
+      "action_schema_id": "collective-bodyrate-v1",
+      "vehicle_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "observation_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "training_config_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "physics_hz": 120,
+      "policy_hz": 60,
+      "created_utc": "2026-09-06T00:00:00Z",
+      "duration_s": 0.016666666666666666,
+      "files": {
+        "course.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        },
+        "vehicle.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        },
+        "observations.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        },
+        "states.f64": {
+          "dtype": "float64",
+          "shape": [
+            3,
+            18
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 432
+        },
+        "physics_commands.f64": {
+          "dtype": "float64",
+          "shape": [
+            2,
+            6
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 96
+        },
+        "policy_inputs_actions.f32": {
+          "dtype": "float32",
+          "shape": [
+            1,
+            52
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 208
+        },
+        "policy_times.f64": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 16
+        },
+        "policy_revisions.u32": {
+          "dtype": "uint32",
+          "shape": [
+            1
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 4
+        },
+        "rewards.f32": {
+          "dtype": "float32",
+          "shape": [
+            1,
+            7
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 28
+        },
+        "terminal_observation.f32": {
+          "dtype": "float32",
+          "shape": [
+            40
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 160
+        },
+        "events.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        },
+        "metrics.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        }
+      },
+      "outcome": "timeout"
+    },
+    "accepted": false
+  },
+  {
+    "id": "replay-extra",
+    "schema": "replay",
+    "data": {
+      "schema_version": 1,
+      "replay_id": "00000000-0000-4000-8000-000000000005",
+      "origin": "evaluation",
+      "run_id": "00000000-0000-4000-8000-000000000003",
+      "session_id": "00000000-0000-4000-8000-000000000006",
+      "episode_id": "00000000-0000-4000-8000-000000000007",
+      "env_id": 0,
+      "task_kind": "race",
+      "curriculum_stage": 6,
+      "reward_mode": "reliability",
+      "transition_start": 0,
+      "transition_end": 1,
+      "policy_revision_start": 0,
+      "policy_revision_end": 0,
+      "checkpoint_id": "00000000-0000-4000-8000-000000000004",
+      "policy_revisions": [
+        {
+          "revision": 0,
+          "actor_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "deterministic_actions": true,
+      "complete": true,
+      "interruption_reason": null,
+      "simulator_id": "quadrotor-rk4-v1",
+      "controller_id": "rate-p-v1",
+      "observation_schema_id": "obs-bodyrate-v1",
+      "action_schema_id": "collective-bodyrate-v1",
+      "vehicle_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "observation_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "training_config_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "physics_hz": 120,
+      "policy_hz": 60,
+      "created_utc": "2026-09-06T00:00:00Z",
+      "duration_s": 0.016666666666666666,
+      "files": {
+        "course.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        },
+        "vehicle.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        },
+        "observations.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        },
+        "states.f64": {
+          "dtype": "float64",
+          "shape": [
+            3,
+            18
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 432
+        },
+        "physics_commands.f64": {
+          "dtype": "float64",
+          "shape": [
+            2,
+            6
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 96
+        },
+        "policy_inputs_actions.f32": {
+          "dtype": "float32",
+          "shape": [
+            1,
+            52
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 208
+        },
+        "policy_times.f64": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 16
+        },
+        "policy_revisions.u32": {
+          "dtype": "uint32",
+          "shape": [
+            1
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 4
+        },
+        "rewards.f32": {
+          "dtype": "float32",
+          "shape": [
+            1,
+            7
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 28
+        },
+        "terminal_observation.f32": {
+          "dtype": "float32",
+          "shape": [
+            40
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 160
+        },
+        "events.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        },
+        "metrics.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        }
+      },
+      "outcome": "timeout",
+      "unexpected": true
+    },
+    "accepted": false
+  },
+  {
+    "id": "worker-message-valid",
+    "schema": "worker-message",
+    "data": {
+      "protocol_version": 1,
+      "generation_id": 0,
+      "request_id": 0,
+      "type": "LOAD_COURSE",
+      "course": {
+        "schema_version": 1,
+        "course_id": "00000000-0000-4000-8000-000000000001",
+        "name": "Contract fixture — straight",
+        "mode": "standard",
+        "gates": [
+          {
+            "id": "00000000-0000-4000-8000-000000000010",
+            "label": 1,
+            "center_m": [
+              -28,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000011",
+            "label": 2,
+            "center_m": [
+              -21,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000012",
+            "label": 3,
+            "center_m": [
+              -14,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000013",
+            "label": 4,
+            "center_m": [
+              -7,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000014",
+            "label": 5,
+            "center_m": [
+              0,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000015",
+            "label": 6,
+            "center_m": [
+              7,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000016",
+            "label": 7,
+            "center_m": [
+              14,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000017",
+            "label": 8,
+            "center_m": [
+              21,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000018",
+            "label": 9,
+            "center_m": [
+              28,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000019",
+            "label": 10,
+            "center_m": [
+              35,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          }
+        ],
+        "initial_state": {
+          "position_m": [
+            -35,
+            0,
+            5
+          ],
+          "quaternion_wxyz": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "velocity_world_mps": [
+            0,
+            0,
+            0
+          ],
+          "omega_body_radps": [
+            0,
+            0,
+            0
+          ],
+          "motor_thrust_n": [
+            1.962,
+            1.962,
+            1.962,
+            1.962
+          ]
+        },
+        "start_reference_m": [
+          -35,
+          0,
+          5
+        ],
+        "generator": null,
+        "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    "accepted": true
+  },
+  {
+    "id": "worker-message-missing",
+    "schema": "worker-message",
+    "data": {
+      "generation_id": 0,
+      "request_id": 0,
+      "type": "LOAD_COURSE",
+      "course": {
+        "schema_version": 1,
+        "course_id": "00000000-0000-4000-8000-000000000001",
+        "name": "Contract fixture — straight",
+        "mode": "standard",
+        "gates": [
+          {
+            "id": "00000000-0000-4000-8000-000000000010",
+            "label": 1,
+            "center_m": [
+              -28,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000011",
+            "label": 2,
+            "center_m": [
+              -21,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000012",
+            "label": 3,
+            "center_m": [
+              -14,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000013",
+            "label": 4,
+            "center_m": [
+              -7,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000014",
+            "label": 5,
+            "center_m": [
+              0,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000015",
+            "label": 6,
+            "center_m": [
+              7,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000016",
+            "label": 7,
+            "center_m": [
+              14,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000017",
+            "label": 8,
+            "center_m": [
+              21,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000018",
+            "label": 9,
+            "center_m": [
+              28,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000019",
+            "label": 10,
+            "center_m": [
+              35,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          }
+        ],
+        "initial_state": {
+          "position_m": [
+            -35,
+            0,
+            5
+          ],
+          "quaternion_wxyz": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "velocity_world_mps": [
+            0,
+            0,
+            0
+          ],
+          "omega_body_radps": [
+            0,
+            0,
+            0
+          ],
+          "motor_thrust_n": [
+            1.962,
+            1.962,
+            1.962,
+            1.962
+          ]
+        },
+        "start_reference_m": [
+          -35,
+          0,
+          5
+        ],
+        "generator": null,
+        "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    "accepted": false
+  },
+  {
+    "id": "worker-message-extra",
+    "schema": "worker-message",
+    "data": {
+      "protocol_version": 1,
+      "generation_id": 0,
+      "request_id": 0,
+      "type": "LOAD_COURSE",
+      "course": {
+        "schema_version": 1,
+        "course_id": "00000000-0000-4000-8000-000000000001",
+        "name": "Contract fixture — straight",
+        "mode": "standard",
+        "gates": [
+          {
+            "id": "00000000-0000-4000-8000-000000000010",
+            "label": 1,
+            "center_m": [
+              -28,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000011",
+            "label": 2,
+            "center_m": [
+              -21,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000012",
+            "label": 3,
+            "center_m": [
+              -14,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000013",
+            "label": 4,
+            "center_m": [
+              -7,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000014",
+            "label": 5,
+            "center_m": [
+              0,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000015",
+            "label": 6,
+            "center_m": [
+              7,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000016",
+            "label": 7,
+            "center_m": [
+              14,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000017",
+            "label": 8,
+            "center_m": [
+              21,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000018",
+            "label": 9,
+            "center_m": [
+              28,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000019",
+            "label": 10,
+            "center_m": [
+              35,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          }
+        ],
+        "initial_state": {
+          "position_m": [
+            -35,
+            0,
+            5
+          ],
+          "quaternion_wxyz": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "velocity_world_mps": [
+            0,
+            0,
+            0
+          ],
+          "omega_body_radps": [
+            0,
+            0,
+            0
+          ],
+          "motor_thrust_n": [
+            1.962,
+            1.962,
+            1.962,
+            1.962
+          ]
+        },
+        "start_reference_m": [
+          -35,
+          0,
+          5
+        ],
+        "generator": null,
+        "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      },
+      "unexpected": true
+    },
+    "accepted": false
+  },
+  {
+    "id": "wrong-gate-count",
+    "schema": "course",
+    "data": {
+      "schema_version": 1,
+      "course_id": "00000000-0000-4000-8000-000000000001",
+      "name": "Contract fixture — straight",
+      "mode": "standard",
+      "gates": [
+        {
+          "id": "00000000-0000-4000-8000-000000000010",
+          "label": 1,
+          "center_m": [
+            -28,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000011",
+          "label": 2,
+          "center_m": [
+            -21,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000012",
+          "label": 3,
+          "center_m": [
+            -14,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000013",
+          "label": 4,
+          "center_m": [
+            -7,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000014",
+          "label": 5,
+          "center_m": [
+            0,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000015",
+          "label": 6,
+          "center_m": [
+            7,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000016",
+          "label": 7,
+          "center_m": [
+            14,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000017",
+          "label": 8,
+          "center_m": [
+            21,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000018",
+          "label": 9,
+          "center_m": [
+            28,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        }
+      ],
+      "initial_state": {
+        "position_m": [
+          -35,
+          0,
+          5
+        ],
+        "quaternion_wxyz": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "velocity_world_mps": [
+          0,
+          0,
+          0
+        ],
+        "omega_body_radps": [
+          0,
+          0,
+          0
+        ],
+        "motor_thrust_n": [
+          1.962,
+          1.962,
+          1.962,
+          1.962
+        ]
+      },
+      "start_reference_m": [
+        -35,
+        0,
+        5
+      ],
+      "generator": null,
+      "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "accepted": false
+  },
+  {
+    "id": "unordered-labels",
+    "schema": "course",
+    "data": {
+      "schema_version": 1,
+      "course_id": "00000000-0000-4000-8000-000000000001",
+      "name": "Contract fixture — straight",
+      "mode": "standard",
+      "gates": [
+        {
+          "id": "00000000-0000-4000-8000-000000000010",
+          "label": 1,
+          "center_m": [
+            -28,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000011",
+          "label": 2,
+          "center_m": [
+            -21,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000012",
+          "label": 3,
+          "center_m": [
+            -14,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000013",
+          "label": 4,
+          "center_m": [
+            -7,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000014",
+          "label": 2,
+          "center_m": [
+            0,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000015",
+          "label": 6,
+          "center_m": [
+            7,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000016",
+          "label": 7,
+          "center_m": [
+            14,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000017",
+          "label": 8,
+          "center_m": [
+            21,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000018",
+          "label": 9,
+          "center_m": [
+            28,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000019",
+          "label": 10,
+          "center_m": [
+            35,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        }
+      ],
+      "initial_state": {
+        "position_m": [
+          -35,
+          0,
+          5
+        ],
+        "quaternion_wxyz": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "velocity_world_mps": [
+          0,
+          0,
+          0
+        ],
+        "omega_body_radps": [
+          0,
+          0,
+          0
+        ],
+        "motor_thrust_n": [
+          1.962,
+          1.962,
+          1.962,
+          1.962
+        ]
+      },
+      "start_reference_m": [
+        -35,
+        0,
+        5
+      ],
+      "generator": null,
+      "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "accepted": false
+  },
+  {
+    "id": "duplicate-gate-id",
+    "schema": "course",
+    "data": {
+      "schema_version": 1,
+      "course_id": "00000000-0000-4000-8000-000000000001",
+      "name": "Contract fixture — straight",
+      "mode": "standard",
+      "gates": [
+        {
+          "id": "00000000-0000-4000-8000-000000000010",
+          "label": 1,
+          "center_m": [
+            -28,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000011",
+          "label": 2,
+          "center_m": [
+            -21,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000012",
+          "label": 3,
+          "center_m": [
+            -14,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000013",
+          "label": 4,
+          "center_m": [
+            -7,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000011",
+          "label": 5,
+          "center_m": [
+            0,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000015",
+          "label": 6,
+          "center_m": [
+            7,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000016",
+          "label": 7,
+          "center_m": [
+            14,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000017",
+          "label": 8,
+          "center_m": [
+            21,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000018",
+          "label": 9,
+          "center_m": [
+            28,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000019",
+          "label": 10,
+          "center_m": [
+            35,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        }
+      ],
+      "initial_state": {
+        "position_m": [
+          -35,
+          0,
+          5
+        ],
+        "quaternion_wxyz": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "velocity_world_mps": [
+          0,
+          0,
+          0
+        ],
+        "omega_body_radps": [
+          0,
+          0,
+          0
+        ],
+        "motor_thrust_n": [
+          1.962,
+          1.962,
+          1.962,
+          1.962
+        ]
+      },
+      "start_reference_m": [
+        -35,
+        0,
+        5
+      ],
+      "generator": null,
+      "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "accepted": false
+  },
+  {
+    "id": "gate-width",
+    "schema": "course",
+    "data": {
+      "schema_version": 1,
+      "course_id": "00000000-0000-4000-8000-000000000001",
+      "name": "Contract fixture — straight",
+      "mode": "standard",
+      "gates": [
+        {
+          "id": "00000000-0000-4000-8000-000000000010",
+          "label": 1,
+          "center_m": [
+            -28,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 3,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000011",
+          "label": 2,
+          "center_m": [
+            -21,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000012",
+          "label": 3,
+          "center_m": [
+            -14,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000013",
+          "label": 4,
+          "center_m": [
+            -7,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000014",
+          "label": 5,
+          "center_m": [
+            0,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000015",
+          "label": 6,
+          "center_m": [
+            7,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000016",
+          "label": 7,
+          "center_m": [
+            14,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000017",
+          "label": 8,
+          "center_m": [
+            21,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000018",
+          "label": 9,
+          "center_m": [
+            28,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000019",
+          "label": 10,
+          "center_m": [
+            35,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        }
+      ],
+      "initial_state": {
+        "position_m": [
+          -35,
+          0,
+          5
+        ],
+        "quaternion_wxyz": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "velocity_world_mps": [
+          0,
+          0,
+          0
+        ],
+        "omega_body_radps": [
+          0,
+          0,
+          0
+        ],
+        "motor_thrust_n": [
+          1.962,
+          1.962,
+          1.962,
+          1.962
+        ]
+      },
+      "start_reference_m": [
+        -35,
+        0,
+        5
+      ],
+      "generator": null,
+      "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "accepted": false
+  },
+  {
+    "id": "tilted-gate",
+    "schema": "course",
+    "data": {
+      "schema_version": 1,
+      "course_id": "00000000-0000-4000-8000-000000000001",
+      "name": "Contract fixture — straight",
+      "mode": "standard",
+      "gates": [
+        {
+          "id": "00000000-0000-4000-8000-000000000010",
+          "label": 1,
+          "center_m": [
+            -28,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1,
+          "pitch_rad": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000011",
+          "label": 2,
+          "center_m": [
+            -21,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000012",
+          "label": 3,
+          "center_m": [
+            -14,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000013",
+          "label": 4,
+          "center_m": [
+            -7,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000014",
+          "label": 5,
+          "center_m": [
+            0,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000015",
+          "label": 6,
+          "center_m": [
+            7,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000016",
+          "label": 7,
+          "center_m": [
+            14,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000017",
+          "label": 8,
+          "center_m": [
+            21,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000018",
+          "label": 9,
+          "center_m": [
+            28,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        },
+        {
+          "id": "00000000-0000-4000-8000-000000000019",
+          "label": 10,
+          "center_m": [
+            35,
+            0,
+            5
+          ],
+          "yaw_rad": 0,
+          "width_m": 2.5,
+          "height_m": 2.5,
+          "frame_bar_m": 0.1,
+          "frame_depth_m": 0.1
+        }
+      ],
+      "initial_state": {
+        "position_m": [
+          -35,
+          0,
+          5
+        ],
+        "quaternion_wxyz": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "velocity_world_mps": [
+          0,
+          0,
+          0
+        ],
+        "omega_body_radps": [
+          0,
+          0,
+          0
+        ],
+        "motor_thrust_n": [
+          1.962,
+          1.962,
+          1.962,
+          1.962
+        ]
+      },
+      "start_reference_m": [
+        -35,
+        0,
+        5
+      ],
+      "generator": null,
+      "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "accepted": false
+  },
+  {
+    "id": "zero-quaternion",
+    "schema": "state",
+    "data": {
+      "position_m": [
+        -35,
+        0,
+        5
+      ],
+      "quaternion_wxyz": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "velocity_world_mps": [
+        0,
+        0,
+        0
+      ],
+      "omega_body_radps": [
+        0,
+        0,
+        0
+      ],
+      "motor_thrust_n": [
+        1.962,
+        1.962,
+        1.962,
+        1.962
+      ]
+    },
+    "accepted": false
+  },
+  {
+    "id": "unnormalized-quaternion",
+    "schema": "state",
+    "data": {
+      "position_m": [
+        -35,
+        0,
+        5
+      ],
+      "quaternion_wxyz": [
+        0.99,
+        0,
+        0,
+        0
+      ],
+      "velocity_world_mps": [
+        0,
+        0,
+        0
+      ],
+      "omega_body_radps": [
+        0,
+        0,
+        0
+      ],
+      "motor_thrust_n": [
+        1.962,
+        1.962,
+        1.962,
+        1.962
+      ]
+    },
+    "accepted": false
+  },
+  {
+    "id": "negative-motor",
+    "schema": "state",
+    "data": {
+      "position_m": [
+        -35,
+        0,
+        5
+      ],
+      "quaternion_wxyz": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "velocity_world_mps": [
+        0,
+        0,
+        0
+      ],
+      "omega_body_radps": [
+        0,
+        0,
+        0
+      ],
+      "motor_thrust_n": [
+        -0.1,
+        1.962,
+        1.962,
+        1.962
+      ]
+    },
+    "accepted": false
+  },
+  {
+    "id": "body-frame-wrong",
+    "schema": "vehicle",
+    "data": {
+      "schema_version": 1,
+      "simulator_id": "quadrotor-rk4-v1",
+      "controller_id": "rate-p-v1",
+      "world_frame": "right-handed-z-up",
+      "body_frame": "x-forward-y-right-z-down",
+      "quaternion_order": "wxyz",
+      "mass_kg": 0.8,
+      "gravity_mps2": 9.81,
+      "inertia_kgm2": [
+        0.005,
+        0.005,
+        0.009
+      ],
+      "arm_length_m": 0.2,
+      "rotor_max_thrust_n": 4,
+      "motor_time_constant_s": 0.03,
+      "linear_drag_kgps": 0.08,
+      "reaction_torque_per_thrust_m": 0.016,
+      "rate_gains": [
+        0.08,
+        0.08,
+        0.04
+      ],
+      "collision_radius_m": 0.3,
+      "gate_pass_margin_m": 0.05,
+      "physics_hz": 120,
+      "policy_hz": 60,
+      "geometry_epsilon_m": 1e-9,
+      "quaternion_input_tolerance": 0.000001,
+      "quaternion_min_norm": 1e-12,
+      "motor_roundoff_tolerance_n": 1e-10,
+      "state_limit_speed_mps": 100,
+      "state_limit_rate_radps": 100,
+      "action": {
+        "schema_id": "collective-bodyrate-v1",
+        "dimension": 4,
+        "minimum": -1,
+        "maximum": 1,
+        "max_collective_n": 16,
+        "max_body_rates_radps": [
+          6,
+          6,
+          3
+        ]
+      },
+      "rotors": [
+        {
+          "index": 0,
+          "position_m": [
+            0.1414213562373095,
+            0.1414213562373095,
+            0
+          ],
+          "reaction_sign": 1
+        },
+        {
+          "index": 1,
+          "position_m": [
+            -0.1414213562373095,
+            0.1414213562373095,
+            0
+          ],
+          "reaction_sign": -1
+        },
+        {
+          "index": 2,
+          "position_m": [
+            -0.1414213562373095,
+            -0.1414213562373095,
+            0
+          ],
+          "reaction_sign": 1
+        },
+        {
+          "index": 3,
+          "position_m": [
+            0.1414213562373095,
+            -0.1414213562373095,
+            0
+          ],
+          "reaction_sign": -1
+        }
+      ]
+    },
+    "accepted": false
+  },
+  {
+    "id": "bad-mixer",
+    "schema": "vehicle",
+    "data": {
+      "schema_version": 1,
+      "simulator_id": "quadrotor-rk4-v1",
+      "controller_id": "rate-p-v1",
+      "world_frame": "right-handed-z-up",
+      "body_frame": "x-forward-y-left-z-up",
+      "quaternion_order": "wxyz",
+      "mass_kg": 0.8,
+      "gravity_mps2": 9.81,
+      "inertia_kgm2": [
+        0.005,
+        0.005,
+        0.009
+      ],
+      "arm_length_m": 0.2,
+      "rotor_max_thrust_n": 4,
+      "motor_time_constant_s": 0.03,
+      "linear_drag_kgps": 0.08,
+      "reaction_torque_per_thrust_m": 0.016,
+      "rate_gains": [
+        0.08,
+        0.08,
+        0.04
+      ],
+      "collision_radius_m": 0.3,
+      "gate_pass_margin_m": 0.05,
+      "physics_hz": 120,
+      "policy_hz": 60,
+      "geometry_epsilon_m": 1e-9,
+      "quaternion_input_tolerance": 0.000001,
+      "quaternion_min_norm": 1e-12,
+      "motor_roundoff_tolerance_n": 1e-10,
+      "state_limit_speed_mps": 100,
+      "state_limit_rate_radps": 100,
+      "action": {
+        "schema_id": "collective-bodyrate-v1",
+        "dimension": 4,
+        "minimum": -1,
+        "maximum": 1,
+        "max_collective_n": 16,
+        "max_body_rates_radps": [
+          6,
+          6,
+          3
+        ]
+      },
+      "rotors": [
+        {
+          "index": 0,
+          "position_m": [
+            0.1414213562373095,
+            0.1414213562373095,
+            0
+          ],
+          "reaction_sign": 1
+        },
+        {
+          "index": 1,
+          "position_m": [
+            -0.1414213562373095,
+            0.1414213562373095,
+            0
+          ],
+          "reaction_sign": 1
+        },
+        {
+          "index": 2,
+          "position_m": [
+            -0.1414213562373095,
+            -0.1414213562373095,
+            0
+          ],
+          "reaction_sign": 1
+        },
+        {
+          "index": 3,
+          "position_m": [
+            0.1414213562373095,
+            -0.1414213562373095,
+            0
+          ],
+          "reaction_sign": -1
+        }
+      ]
+    },
+    "accepted": false
+  },
+  {
+    "id": "bad-collective",
+    "schema": "vehicle",
+    "data": {
+      "schema_version": 1,
+      "simulator_id": "quadrotor-rk4-v1",
+      "controller_id": "rate-p-v1",
+      "world_frame": "right-handed-z-up",
+      "body_frame": "x-forward-y-left-z-up",
+      "quaternion_order": "wxyz",
+      "mass_kg": 0.8,
+      "gravity_mps2": 9.81,
+      "inertia_kgm2": [
+        0.005,
+        0.005,
+        0.009
+      ],
+      "arm_length_m": 0.2,
+      "rotor_max_thrust_n": 4,
+      "motor_time_constant_s": 0.03,
+      "linear_drag_kgps": 0.08,
+      "reaction_torque_per_thrust_m": 0.016,
+      "rate_gains": [
+        0.08,
+        0.08,
+        0.04
+      ],
+      "collision_radius_m": 0.3,
+      "gate_pass_margin_m": 0.05,
+      "physics_hz": 120,
+      "policy_hz": 60,
+      "geometry_epsilon_m": 1e-9,
+      "quaternion_input_tolerance": 0.000001,
+      "quaternion_min_norm": 1e-12,
+      "motor_roundoff_tolerance_n": 1e-10,
+      "state_limit_speed_mps": 100,
+      "state_limit_rate_radps": 100,
+      "action": {
+        "schema_id": "collective-bodyrate-v1",
+        "dimension": 4,
+        "minimum": -1,
+        "maximum": 1,
+        "max_collective_n": 20,
+        "max_body_rates_radps": [
+          6,
+          6,
+          3
+        ]
+      },
+      "rotors": [
+        {
+          "index": 0,
+          "position_m": [
+            0.1414213562373095,
+            0.1414213562373095,
+            0
+          ],
+          "reaction_sign": 1
+        },
+        {
+          "index": 1,
+          "position_m": [
+            -0.1414213562373095,
+            0.1414213562373095,
+            0
+          ],
+          "reaction_sign": -1
+        },
+        {
+          "index": 2,
+          "position_m": [
+            -0.1414213562373095,
+            -0.1414213562373095,
+            0
+          ],
+          "reaction_sign": 1
+        },
+        {
+          "index": 3,
+          "position_m": [
+            0.1414213562373095,
+            -0.1414213562373095,
+            0
+          ],
+          "reaction_sign": -1
+        }
+      ]
+    },
+    "accepted": false
+  },
+  {
+    "id": "bad-rollout",
+    "schema": "training",
+    "data": {
+      "schema_version": 1,
+      "config_id": "training-v1",
+      "ppo": {
+        "algorithm": "PPO",
+        "policy": "MlpPolicy",
+        "actor_layers": [
+          256,
+          256
+        ],
+        "critic_layers": [
+          256,
+          256
+        ],
+        "activation": "Tanh",
+        "orthogonal_init": true,
+        "log_std_init": -1,
+        "device": "cpu",
+        "environment_candidates": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "n_steps": 2048,
+        "batch_size": 513,
+        "n_epochs": 10,
+        "gamma": 0.999,
+        "gae_lambda": 0.95,
+        "clip_range": 0.2,
+        "clip_range_vf": null,
+        "normalize_advantage": true,
+        "ent_coef": 0,
+        "vf_coef": 0.5,
+        "max_grad_norm": 0.5,
+        "target_kl": 0.03,
+        "use_sde": false,
+        "stats_window_size": 100,
+        "vec_normalize": false,
+        "budget_transitions": 10000000,
+        "learning_rate": {
+          "start": 0.0003,
+          "end": 0.00003,
+          "schedule": "global-linear"
+        }
+      },
+      "curriculum": {
+        "frontier_probability": 0.8,
+        "previous_probability": 0.2,
+        "promotion_interval_transitions": 131072,
+        "promotion_cases": 64,
+        "promotion_successes": 61,
+        "consecutive_passes": 2,
+        "min_frontier_transitions": 131072,
+        "speed_completion_threshold": 0.95,
+        "stages": [
+          {
+            "index": 0,
+            "task_kind": "hover",
+            "gate_count": 0,
+            "max_turn_rad": 0,
+            "max_height_change_m": 0,
+            "yaw_jitter_rad": 0,
+            "position_perturbation_m": 0.1,
+            "velocity_perturbation_mps": 0.1,
+            "tilt_perturbation_rad": 0.05235987755982988,
+            "yaw_perturbation_rad": 0.08726646259971647,
+            "rate_perturbation_radps": 0.1
+          },
+          {
+            "index": 1,
+            "task_kind": "race",
+            "gate_count": 1,
+            "max_turn_rad": 0,
+            "max_height_change_m": 0,
+            "yaw_jitter_rad": 0,
+            "position_perturbation_m": 0.1,
+            "velocity_perturbation_mps": 0.1,
+            "tilt_perturbation_rad": 0.05235987755982988,
+            "yaw_perturbation_rad": 0.08726646259971647,
+            "rate_perturbation_radps": 0.1
+          },
+          {
+            "index": 2,
+            "task_kind": "race",
+            "gate_count": 1,
+            "max_turn_rad": 0,
+            "max_height_change_m": 0.25,
+            "yaw_jitter_rad": 0.08726646259971647,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          },
+          {
+            "index": 3,
+            "task_kind": "race",
+            "gate_count": 3,
+            "max_turn_rad": 0,
+            "max_height_change_m": 0,
+            "yaw_jitter_rad": 0,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          },
+          {
+            "index": 4,
+            "task_kind": "race",
+            "gate_count": 3,
+            "max_turn_rad": 0.2617993877991494,
+            "max_height_change_m": 0.5,
+            "yaw_jitter_rad": 0.08726646259971647,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          },
+          {
+            "index": 5,
+            "task_kind": "race",
+            "gate_count": 10,
+            "max_turn_rad": 0.3490658503988659,
+            "max_height_change_m": 0.75,
+            "yaw_jitter_rad": 0.08726646259971647,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          },
+          {
+            "index": 6,
+            "task_kind": "race",
+            "gate_count": 10,
+            "max_turn_rad": 0.5235987755982988,
+            "max_height_change_m": 1.5,
+            "yaw_jitter_rad": 0.17453292519943295,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          }
+        ]
+      },
+      "reward": {
+        "progress_per_m": 0.5,
+        "gate_bonus": 10,
+        "finish_bonus": 50,
+        "reliability_time_per_s": 0.2,
+        "speed_time_per_s": 0.5,
+        "smoothness": 0.02,
+        "failure_cost": 50,
+        "hover": {
+          "alive_per_s": 1,
+          "position_cost": 0.5,
+          "velocity_cost": 0.1,
+          "tilt_cost": 0.1,
+          "rate_cost": 0.02,
+          "smoothness": 0.02,
+          "departure_m": 1,
+          "departure_tilt_rad": 0.5235987755982988,
+          "success_bonus": 5,
+          "failure_cost": 5
+        }
+      },
+      "evaluation": {
+        "root_seeds": [
+          101,
+          202,
+          303
+        ],
+        "promotion_namespace": 10001,
+        "development_namespace": 20001,
+        "final_namespace": 30001,
+        "stress_namespace": 40001,
+        "public_namespace": 50001,
+        "development_cases": 512,
+        "final_cases": 1000,
+        "stress_cases": 100,
+        "public_cases": 12,
+        "release_completion": 0.95,
+        "reproducibility_completion": 0.9
+      },
+      "checkpoint": {
+        "interval_transitions": 32768,
+        "keep_latest": 2,
+        "wall_budget_s": 36000
+      },
+      "recording": {
+        "training_cap_bytes": 1073741824,
+        "evaluation_cap_bytes": 1073741824,
+        "diagnostics_cap_bytes": 33554432,
+        "window_transitions": 1000000,
+        "per_bucket": 2,
+        "writer_queue": 8,
+        "evaluation_comparison_cases": 16,
+        "final_per_outcome": 32,
+        "priority_version": "retention-v1"
+      }
+    },
+    "accepted": false
+  },
+  {
+    "id": "bad-probability",
+    "schema": "training",
+    "data": {
+      "schema_version": 1,
+      "config_id": "training-v1",
+      "ppo": {
+        "algorithm": "PPO",
+        "policy": "MlpPolicy",
+        "actor_layers": [
+          256,
+          256
+        ],
+        "critic_layers": [
+          256,
+          256
+        ],
+        "activation": "Tanh",
+        "orthogonal_init": true,
+        "log_std_init": -1,
+        "device": "cpu",
+        "environment_candidates": [
+          1,
+          2,
+          4,
+          8
+        ],
+        "n_steps": 2048,
+        "batch_size": 512,
+        "n_epochs": 10,
+        "gamma": 0.999,
+        "gae_lambda": 0.95,
+        "clip_range": 0.2,
+        "clip_range_vf": null,
+        "normalize_advantage": true,
+        "ent_coef": 0,
+        "vf_coef": 0.5,
+        "max_grad_norm": 0.5,
+        "target_kl": 0.03,
+        "use_sde": false,
+        "stats_window_size": 100,
+        "vec_normalize": false,
+        "budget_transitions": 10000000,
+        "learning_rate": {
+          "start": 0.0003,
+          "end": 0.00003,
+          "schedule": "global-linear"
+        }
+      },
+      "curriculum": {
+        "frontier_probability": 0.5,
+        "previous_probability": 0.2,
+        "promotion_interval_transitions": 131072,
+        "promotion_cases": 64,
+        "promotion_successes": 61,
+        "consecutive_passes": 2,
+        "min_frontier_transitions": 131072,
+        "speed_completion_threshold": 0.95,
+        "stages": [
+          {
+            "index": 0,
+            "task_kind": "hover",
+            "gate_count": 0,
+            "max_turn_rad": 0,
+            "max_height_change_m": 0,
+            "yaw_jitter_rad": 0,
+            "position_perturbation_m": 0.1,
+            "velocity_perturbation_mps": 0.1,
+            "tilt_perturbation_rad": 0.05235987755982988,
+            "yaw_perturbation_rad": 0.08726646259971647,
+            "rate_perturbation_radps": 0.1
+          },
+          {
+            "index": 1,
+            "task_kind": "race",
+            "gate_count": 1,
+            "max_turn_rad": 0,
+            "max_height_change_m": 0,
+            "yaw_jitter_rad": 0,
+            "position_perturbation_m": 0.1,
+            "velocity_perturbation_mps": 0.1,
+            "tilt_perturbation_rad": 0.05235987755982988,
+            "yaw_perturbation_rad": 0.08726646259971647,
+            "rate_perturbation_radps": 0.1
+          },
+          {
+            "index": 2,
+            "task_kind": "race",
+            "gate_count": 1,
+            "max_turn_rad": 0,
+            "max_height_change_m": 0.25,
+            "yaw_jitter_rad": 0.08726646259971647,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          },
+          {
+            "index": 3,
+            "task_kind": "race",
+            "gate_count": 3,
+            "max_turn_rad": 0,
+            "max_height_change_m": 0,
+            "yaw_jitter_rad": 0,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          },
+          {
+            "index": 4,
+            "task_kind": "race",
+            "gate_count": 3,
+            "max_turn_rad": 0.2617993877991494,
+            "max_height_change_m": 0.5,
+            "yaw_jitter_rad": 0.08726646259971647,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          },
+          {
+            "index": 5,
+            "task_kind": "race",
+            "gate_count": 10,
+            "max_turn_rad": 0.3490658503988659,
+            "max_height_change_m": 0.75,
+            "yaw_jitter_rad": 0.08726646259971647,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          },
+          {
+            "index": 6,
+            "task_kind": "race",
+            "gate_count": 10,
+            "max_turn_rad": 0.5235987755982988,
+            "max_height_change_m": 1.5,
+            "yaw_jitter_rad": 0.17453292519943295,
+            "position_perturbation_m": 0.25,
+            "velocity_perturbation_mps": 0.25,
+            "tilt_perturbation_rad": 0.08726646259971647,
+            "yaw_perturbation_rad": 0.17453292519943295,
+            "rate_perturbation_radps": 0.2
+          }
+        ]
+      },
+      "reward": {
+        "progress_per_m": 0.5,
+        "gate_bonus": 10,
+        "finish_bonus": 50,
+        "reliability_time_per_s": 0.2,
+        "speed_time_per_s": 0.5,
+        "smoothness": 0.02,
+        "failure_cost": 50,
+        "hover": {
+          "alive_per_s": 1,
+          "position_cost": 0.5,
+          "velocity_cost": 0.1,
+          "tilt_cost": 0.1,
+          "rate_cost": 0.02,
+          "smoothness": 0.02,
+          "departure_m": 1,
+          "departure_tilt_rad": 0.5235987755982988,
+          "success_bonus": 5,
+          "failure_cost": 5
+        }
+      },
+      "evaluation": {
+        "root_seeds": [
+          101,
+          202,
+          303
+        ],
+        "promotion_namespace": 10001,
+        "development_namespace": 20001,
+        "final_namespace": 30001,
+        "stress_namespace": 40001,
+        "public_namespace": 50001,
+        "development_cases": 512,
+        "final_cases": 1000,
+        "stress_cases": 100,
+        "public_cases": 12,
+        "release_completion": 0.95,
+        "reproducibility_completion": 0.9
+      },
+      "checkpoint": {
+        "interval_transitions": 32768,
+        "keep_latest": 2,
+        "wall_budget_s": 36000
+      },
+      "recording": {
+        "training_cap_bytes": 1073741824,
+        "evaluation_cap_bytes": 1073741824,
+        "diagnostics_cap_bytes": 33554432,
+        "window_transitions": 1000000,
+        "per_bucket": 2,
+        "writer_queue": 8,
+        "evaluation_comparison_cases": 16,
+        "final_per_outcome": 32,
+        "priority_version": "retention-v1"
+      }
+    },
+    "accepted": false
+  },
+  {
+    "id": "bad-ordering",
+    "schema": "replay",
+    "data": {
+      "schema_version": 1,
+      "replay_id": "00000000-0000-4000-8000-000000000005",
+      "origin": "evaluation",
+      "run_id": "00000000-0000-4000-8000-000000000003",
+      "session_id": "00000000-0000-4000-8000-000000000006",
+      "episode_id": "00000000-0000-4000-8000-000000000007",
+      "env_id": 0,
+      "task_kind": "race",
+      "curriculum_stage": 6,
+      "reward_mode": "reliability",
+      "transition_start": 2,
+      "transition_end": 1,
+      "policy_revision_start": 0,
+      "policy_revision_end": 0,
+      "checkpoint_id": "00000000-0000-4000-8000-000000000004",
+      "policy_revisions": [
+        {
+          "revision": 0,
+          "actor_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "deterministic_actions": true,
+      "complete": true,
+      "interruption_reason": null,
+      "simulator_id": "quadrotor-rk4-v1",
+      "controller_id": "rate-p-v1",
+      "observation_schema_id": "obs-bodyrate-v1",
+      "action_schema_id": "collective-bodyrate-v1",
+      "vehicle_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "observation_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "training_config_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "physics_hz": 120,
+      "policy_hz": 60,
+      "created_utc": "2026-09-06T00:00:00Z",
+      "duration_s": 0.016666666666666666,
+      "files": {
+        "course.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        },
+        "vehicle.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        },
+        "observations.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        },
+        "states.f64": {
+          "dtype": "float64",
+          "shape": [
+            3,
+            18
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 432
+        },
+        "physics_commands.f64": {
+          "dtype": "float64",
+          "shape": [
+            2,
+            6
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 96
+        },
+        "policy_inputs_actions.f32": {
+          "dtype": "float32",
+          "shape": [
+            1,
+            52
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 208
+        },
+        "policy_times.f64": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 16
+        },
+        "policy_revisions.u32": {
+          "dtype": "uint32",
+          "shape": [
+            1
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 4
+        },
+        "rewards.f32": {
+          "dtype": "float32",
+          "shape": [
+            1,
+            7
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 28
+        },
+        "terminal_observation.f32": {
+          "dtype": "float32",
+          "shape": [
+            40
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 160
+        },
+        "events.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        },
+        "metrics.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        }
+      },
+      "outcome": "timeout"
+    },
+    "accepted": false
+  },
+  {
+    "id": "bad-array-size",
+    "schema": "replay",
+    "data": {
+      "schema_version": 1,
+      "replay_id": "00000000-0000-4000-8000-000000000005",
+      "origin": "evaluation",
+      "run_id": "00000000-0000-4000-8000-000000000003",
+      "session_id": "00000000-0000-4000-8000-000000000006",
+      "episode_id": "00000000-0000-4000-8000-000000000007",
+      "env_id": 0,
+      "task_kind": "race",
+      "curriculum_stage": 6,
+      "reward_mode": "reliability",
+      "transition_start": 0,
+      "transition_end": 1,
+      "policy_revision_start": 0,
+      "policy_revision_end": 0,
+      "checkpoint_id": "00000000-0000-4000-8000-000000000004",
+      "policy_revisions": [
+        {
+          "revision": 0,
+          "actor_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+        }
+      ],
+      "deterministic_actions": true,
+      "complete": true,
+      "interruption_reason": null,
+      "simulator_id": "quadrotor-rk4-v1",
+      "controller_id": "rate-p-v1",
+      "observation_schema_id": "obs-bodyrate-v1",
+      "action_schema_id": "collective-bodyrate-v1",
+      "vehicle_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "observation_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "training_config_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "physics_hz": 120,
+      "policy_hz": 60,
+      "created_utc": "2026-09-06T00:00:00Z",
+      "duration_s": 0.016666666666666666,
+      "files": {
+        "course.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        },
+        "vehicle.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        },
+        "observations.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        },
+        "states.f64": {
+          "dtype": "float64",
+          "shape": [
+            3,
+            18
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 1
+        },
+        "physics_commands.f64": {
+          "dtype": "float64",
+          "shape": [
+            2,
+            6
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 96
+        },
+        "policy_inputs_actions.f32": {
+          "dtype": "float32",
+          "shape": [
+            1,
+            52
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 208
+        },
+        "policy_times.f64": {
+          "dtype": "float64",
+          "shape": [
+            1,
+            2
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 16
+        },
+        "policy_revisions.u32": {
+          "dtype": "uint32",
+          "shape": [
+            1
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 4
+        },
+        "rewards.f32": {
+          "dtype": "float32",
+          "shape": [
+            1,
+            7
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 28
+        },
+        "terminal_observation.f32": {
+          "dtype": "float32",
+          "shape": [
+            40
+          ],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 160
+        },
+        "events.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        },
+        "metrics.json": {
+          "dtype": "json",
+          "shape": [],
+          "sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+          "byte_length": 2
+        }
+      },
+      "outcome": "timeout"
+    },
+    "accepted": false
+  },
+  {
+    "id": "wrong-schema-version",
+    "schema": "model",
+    "data": {
+      "schema_version": 2,
+      "model_id": "00000000-0000-4000-8000-000000000002",
+      "created_utc": "2026-09-06T00:00:00Z",
+      "training_run_id": "00000000-0000-4000-8000-000000000003",
+      "checkpoint_id": "00000000-0000-4000-8000-000000000004",
+      "training_transitions": 0,
+      "training_seed": 101,
+      "code_commit": "0000000000000000000000000000000000000000",
+      "actor_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "actor_file": "actor.onnx",
+      "onnx_opset": 17,
+      "input_name": "obs",
+      "input_shape": [
+        1,
+        40
+      ],
+      "output_name": "action",
+      "output_shape": [
+        1,
+        4
+      ],
+      "dtype": "float32",
+      "observation_schema_id": "obs-bodyrate-v1",
+      "action_schema_id": "collective-bodyrate-v1",
+      "simulator_id": "quadrotor-rk4-v1",
+      "controller_id": "rate-p-v1",
+      "vehicle_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "observation_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "training_config_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "physics_hz": 120,
+      "policy_hz": 60,
+      "python_lock_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "javascript_lock_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "evaluation_report_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "license": "UNLICENSED test fixture, no model weights"
+    },
+    "accepted": false
+  },
+  {
+    "id": "old-observation-shape",
+    "schema": "model",
+    "data": {
+      "schema_version": 1,
+      "model_id": "00000000-0000-4000-8000-000000000002",
+      "created_utc": "2026-09-06T00:00:00Z",
+      "training_run_id": "00000000-0000-4000-8000-000000000003",
+      "checkpoint_id": "00000000-0000-4000-8000-000000000004",
+      "training_transitions": 0,
+      "training_seed": 101,
+      "code_commit": "0000000000000000000000000000000000000000",
+      "actor_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "actor_file": "actor.onnx",
+      "onnx_opset": 17,
+      "input_name": "obs",
+      "input_shape": [
+        1,
+        26
+      ],
+      "output_name": "action",
+      "output_shape": [
+        1,
+        4
+      ],
+      "dtype": "float32",
+      "observation_schema_id": "obs-bodyrate-v1",
+      "action_schema_id": "collective-bodyrate-v1",
+      "simulator_id": "quadrotor-rk4-v1",
+      "controller_id": "rate-p-v1",
+      "vehicle_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "observation_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "training_config_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "physics_hz": 120,
+      "policy_hz": 60,
+      "python_lock_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "javascript_lock_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "evaluation_report_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "license": "UNLICENSED test fixture, no model weights"
+    },
+    "accepted": false
+  },
+  {
+    "id": "model-path-traversal",
+    "schema": "model",
+    "data": {
+      "schema_version": 1,
+      "model_id": "00000000-0000-4000-8000-000000000002",
+      "created_utc": "2026-09-06T00:00:00Z",
+      "training_run_id": "00000000-0000-4000-8000-000000000003",
+      "checkpoint_id": "00000000-0000-4000-8000-000000000004",
+      "training_transitions": 0,
+      "training_seed": 101,
+      "code_commit": "0000000000000000000000000000000000000000",
+      "actor_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "actor_file": "../actor.onnx",
+      "onnx_opset": 17,
+      "input_name": "obs",
+      "input_shape": [
+        1,
+        40
+      ],
+      "output_name": "action",
+      "output_shape": [
+        1,
+        4
+      ],
+      "dtype": "float32",
+      "observation_schema_id": "obs-bodyrate-v1",
+      "action_schema_id": "collective-bodyrate-v1",
+      "simulator_id": "quadrotor-rk4-v1",
+      "controller_id": "rate-p-v1",
+      "vehicle_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "observation_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "training_config_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "physics_hz": 120,
+      "policy_hz": 60,
+      "python_lock_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "javascript_lock_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "evaluation_report_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+      "license": "UNLICENSED test fixture, no model weights"
+    },
+    "accepted": false
+  },
+  {
+    "id": "unknown-message",
+    "schema": "worker-message",
+    "data": {
+      "protocol_version": 1,
+      "generation_id": 0,
+      "request_id": 0,
+      "type": "DO_ANYTHING",
+      "course": {
+        "schema_version": 1,
+        "course_id": "00000000-0000-4000-8000-000000000001",
+        "name": "Contract fixture — straight",
+        "mode": "standard",
+        "gates": [
+          {
+            "id": "00000000-0000-4000-8000-000000000010",
+            "label": 1,
+            "center_m": [
+              -28,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000011",
+            "label": 2,
+            "center_m": [
+              -21,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000012",
+            "label": 3,
+            "center_m": [
+              -14,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000013",
+            "label": 4,
+            "center_m": [
+              -7,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000014",
+            "label": 5,
+            "center_m": [
+              0,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000015",
+            "label": 6,
+            "center_m": [
+              7,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000016",
+            "label": 7,
+            "center_m": [
+              14,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000017",
+            "label": 8,
+            "center_m": [
+              21,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000018",
+            "label": 9,
+            "center_m": [
+              28,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000019",
+            "label": 10,
+            "center_m": [
+              35,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          }
+        ],
+        "initial_state": {
+          "position_m": [
+            -35,
+            0,
+            5
+          ],
+          "quaternion_wxyz": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "velocity_world_mps": [
+            0,
+            0,
+            0
+          ],
+          "omega_body_radps": [
+            0,
+            0,
+            0
+          ],
+          "motor_thrust_n": [
+            1.962,
+            1.962,
+            1.962,
+            1.962
+          ]
+        },
+        "start_reference_m": [
+          -35,
+          0,
+          5
+        ],
+        "generator": null,
+        "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    "accepted": false
+  },
+  {
+    "id": "nested-bad-course",
+    "schema": "worker-message",
+    "data": {
+      "protocol_version": 1,
+      "generation_id": 0,
+      "request_id": 0,
+      "type": "LOAD_COURSE",
+      "course": {
+        "schema_version": 1,
+        "course_id": "00000000-0000-4000-8000-000000000001",
+        "name": "Contract fixture — straight",
+        "mode": "standard",
+        "gates": [
+          {
+            "id": "00000000-0000-4000-8000-000000000010",
+            "label": 8,
+            "center_m": [
+              -28,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000011",
+            "label": 2,
+            "center_m": [
+              -21,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000012",
+            "label": 3,
+            "center_m": [
+              -14,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000013",
+            "label": 4,
+            "center_m": [
+              -7,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000014",
+            "label": 5,
+            "center_m": [
+              0,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000015",
+            "label": 6,
+            "center_m": [
+              7,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000016",
+            "label": 7,
+            "center_m": [
+              14,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000017",
+            "label": 8,
+            "center_m": [
+              21,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000018",
+            "label": 9,
+            "center_m": [
+              28,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          },
+          {
+            "id": "00000000-0000-4000-8000-000000000019",
+            "label": 10,
+            "center_m": [
+              35,
+              0,
+              5
+            ],
+            "yaw_rad": 0,
+            "width_m": 2.5,
+            "height_m": 2.5,
+            "frame_bar_m": 0.1,
+            "frame_depth_m": 0.1
+          }
+        ],
+        "initial_state": {
+          "position_m": [
+            -35,
+            0,
+            5
+          ],
+          "quaternion_wxyz": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "velocity_world_mps": [
+            0,
+            0,
+            0
+          ],
+          "omega_body_radps": [
+            0,
+            0,
+            0
+          ],
+          "motor_thrust_n": [
+            1.962,
+            1.962,
+            1.962,
+            1.962
+          ]
+        },
+        "start_reference_m": [
+          -35,
+          0,
+          5
+        ],
+        "generator": null,
+        "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+      }
+    },
+    "accepted": false
+  },
+  {
+    "id": "hover-valid",
+    "schema": "course",
+    "data": {
+      "schema_version": 1,
+      "course_id": "00000000-0000-4000-8000-000000000001",
+      "name": "Contract fixture — straight",
+      "mode": "curriculum",
+      "gates": [],
+      "initial_state": {
+        "position_m": [
+          -35,
+          0,
+          5
+        ],
+        "quaternion_wxyz": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "velocity_world_mps": [
+          0,
+          0,
+          0
+        ],
+        "omega_body_radps": [
+          0,
+          0,
+          0
+        ],
+        "motor_thrust_n": [
+          1.962,
+          1.962,
+          1.962,
+          1.962
+        ]
+      },
+      "start_reference_m": [
+        -35,
+        0,
+        5
+      ],
+      "generator": {
+        "version": "course-generator-v1",
+        "seed": "18446744073709551615",
+        "reset_seed": "1",
+        "stage": 0,
+        "attempt_count": 1
+      },
+      "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "accepted": true
+  },
+  {
+    "id": "overflow-seed",
+    "schema": "course",
+    "data": {
+      "schema_version": 1,
+      "course_id": "00000000-0000-4000-8000-000000000001",
+      "name": "Contract fixture — straight",
+      "mode": "curriculum",
+      "gates": [],
+      "initial_state": {
+        "position_m": [
+          -35,
+          0,
+          5
+        ],
+        "quaternion_wxyz": [
+          1,
+          0,
+          0,
+          0
+        ],
+        "velocity_world_mps": [
+          0,
+          0,
+          0
+        ],
+        "omega_body_radps": [
+          0,
+          0,
+          0
+        ],
+        "motor_thrust_n": [
+          1.962,
+          1.962,
+          1.962,
+          1.962
+        ]
+      },
+      "start_reference_m": [
+        -35,
+        0,
+        5
+      ],
+      "generator": {
+        "version": "course-generator-v1",
+        "seed": "18446744073709551616",
+        "reset_seed": "1",
+        "stage": 0,
+        "attempt_count": 1
+      },
+      "rules_sha256": "0000000000000000000000000000000000000000000000000000000000000000"
+    },
+    "accepted": false
+  }
+]

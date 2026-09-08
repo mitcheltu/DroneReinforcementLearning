@@ -1,0 +1,309 @@
+{
+  "generated_at": "2026-09-08T10:00:32.076300+00:00",
+  "runs": [
+    {
+      "id": "agile-curriculum-001",
+      "lessons": [
+        {
+          "id": "gentle",
+          "label": "Gentle gates",
+          "count": 111,
+          "url": "/curriculum-montage/agile-curriculum-001-gentle.json"
+        },
+        {
+          "id": "hover",
+          "label": "Hover retention",
+          "count": 77,
+          "url": "/curriculum-montage/agile-curriculum-001-hover.json"
+        },
+        {
+          "id": "wide_spacing",
+          "label": "Wide spacing",
+          "count": 70,
+          "url": "/curriculum-montage/agile-curriculum-001-wide_spacing.json"
+        },
+        {
+          "id": "turns_60",
+          "label": "Turns up to 60\u00b0",
+          "count": 62,
+          "url": "/curriculum-montage/agile-curriculum-001-turns_60.json"
+        },
+        {
+          "id": "sharp_120",
+          "label": "Sharp turns up to 120\u00b0",
+          "count": 59,
+          "url": "/curriculum-montage/agile-curriculum-001-sharp_120.json"
+        },
+        {
+          "id": "reversals",
+          "label": "150\u2013180\u00b0 reversals",
+          "count": 76,
+          "url": "/curriculum-montage/agile-curriculum-001-reversals.json"
+        },
+        {
+          "id": "rotated_gates",
+          "label": "Independent gate headings",
+          "count": 16,
+          "url": "/curriculum-montage/agile-curriculum-001-rotated_gates.json"
+        },
+        {
+          "id": "mixed",
+          "label": "Mixed three-gate routes",
+          "count": 16,
+          "url": "/curriculum-montage/agile-curriculum-001-mixed.json"
+        },
+        {
+          "id": "ten_gate_mixed",
+          "label": "Mixed ten-gate routes",
+          "count": 16,
+          "url": "/curriculum-montage/agile-curriculum-001-ten_gate_mixed.json"
+        }
+      ],
+      "status": "Finished",
+      "validation": [
+        {
+          "name": "hover",
+          "successes": 8,
+          "cases": 8
+        },
+        {
+          "name": "gentle",
+          "successes": 8,
+          "cases": 8
+        },
+        {
+          "name": "wide_spacing",
+          "successes": 8,
+          "cases": 8
+        },
+        {
+          "name": "turns_60",
+          "successes": 8,
+          "cases": 8
+        },
+        {
+          "name": "sharp_120",
+          "successes": 8,
+          "cases": 8
+        },
+        {
+          "name": "reversals",
+          "successes": 2,
+          "cases": 8
+        },
+        {
+          "name": "rotated_gates",
+          "successes": 7,
+          "cases": 8
+        },
+        {
+          "name": "mixed",
+          "successes": 3,
+          "cases": 8
+        },
+        {
+          "name": "ten_gate_mixed",
+          "successes": 0,
+          "cases": 8
+        }
+      ],
+      "qualified": false
+    },
+    {
+      "id": "agile-curriculum-002",
+      "lessons": [
+        {
+          "id": "gentle",
+          "label": "Gentle gates",
+          "count": 86,
+          "url": "/curriculum-montage/agile-curriculum-002-gentle.json"
+        },
+        {
+          "id": "hover",
+          "label": "Hover retention",
+          "count": 54,
+          "url": "/curriculum-montage/agile-curriculum-002-hover.json"
+        },
+        {
+          "id": "wide_spacing",
+          "label": "Wide spacing",
+          "count": 65,
+          "url": "/curriculum-montage/agile-curriculum-002-wide_spacing.json"
+        },
+        {
+          "id": "turns_60",
+          "label": "Turns up to 60\u00b0",
+          "count": 64,
+          "url": "/curriculum-montage/agile-curriculum-002-turns_60.json"
+        },
+        {
+          "id": "sharp_120",
+          "label": "Sharp turns up to 120\u00b0",
+          "count": 16,
+          "url": "/curriculum-montage/agile-curriculum-002-sharp_120.json"
+        },
+        {
+          "id": "reversals",
+          "label": "150\u2013180\u00b0 reversals",
+          "count": 16,
+          "url": "/curriculum-montage/agile-curriculum-002-reversals.json"
+        },
+        {
+          "id": "rotated_gates",
+          "label": "Independent gate headings",
+          "count": 16,
+          "url": "/curriculum-montage/agile-curriculum-002-rotated_gates.json"
+        },
+        {
+          "id": "mixed",
+          "label": "Mixed three-gate routes",
+          "count": 16,
+          "url": "/curriculum-montage/agile-curriculum-002-mixed.json"
+        },
+        {
+          "id": "ten_gate_mixed",
+          "label": "Mixed ten-gate routes",
+          "count": 16,
+          "url": "/curriculum-montage/agile-curriculum-002-ten_gate_mixed.json"
+        }
+      ],
+      "status": "Finished",
+      "validation": [
+        {
+          "name": "hover",
+          "successes": 8,
+          "cases": 8
+        },
+        {
+          "name": "gentle",
+          "successes": 8,
+          "cases": 8
+        },
+        {
+          "name": "wide_spacing",
+          "successes": 8,
+          "cases": 8
+        },
+        {
+          "name": "turns_60",
+          "successes": 8,
+          "cases": 8
+        },
+        {
+          "name": "sharp_120",
+          "successes": 8,
+          "cases": 8
+        },
+        {
+          "name": "reversals",
+          "successes": 4,
+          "cases": 8
+        },
+        {
+          "name": "rotated_gates",
+          "successes": 8,
+          "cases": 8
+        },
+        {
+          "name": "mixed",
+          "successes": 3,
+          "cases": 8
+        },
+        {
+          "name": "ten_gate_mixed",
+          "successes": 0,
+          "cases": 8
+        }
+      ],
+      "qualified": false
+    },
+    {
+      "id": "agile-curriculum-003",
+      "lessons": [
+        {
+          "id": "gentle",
+          "label": "Gentle gates",
+          "count": 91,
+          "url": "/curriculum-montage/agile-curriculum-003-gentle.json"
+        },
+        {
+          "id": "hover",
+          "label": "Hover retention",
+          "count": 57,
+          "url": "/curriculum-montage/agile-curriculum-003-hover.json"
+        },
+        {
+          "id": "wide_spacing",
+          "label": "Wide spacing",
+          "count": 55,
+          "url": "/curriculum-montage/agile-curriculum-003-wide_spacing.json"
+        },
+        {
+          "id": "turns_60",
+          "label": "Turns up to 60\u00b0",
+          "count": 51,
+          "url": "/curriculum-montage/agile-curriculum-003-turns_60.json"
+        },
+        {
+          "id": "sharp_120",
+          "label": "Sharp turns up to 120\u00b0",
+          "count": 55,
+          "url": "/curriculum-montage/agile-curriculum-003-sharp_120.json"
+        },
+        {
+          "id": "rotated_gates",
+          "label": "Independent gate headings",
+          "count": 68,
+          "url": "/curriculum-montage/agile-curriculum-003-rotated_gates.json"
+        }
+      ],
+      "status": "In progress",
+      "validation": [],
+      "qualified": false
+    },
+    {
+      "id": "agile-curriculum-004",
+      "lessons": [
+        {
+          "id": "wide_spacing",
+          "label": "Wide spacing",
+          "count": 8,
+          "url": "/curriculum-montage/agile-curriculum-004-wide_spacing.json"
+        },
+        {
+          "id": "turns_60",
+          "label": "Turns up to 60\u00b0",
+          "count": 8,
+          "url": "/curriculum-montage/agile-curriculum-004-turns_60.json"
+        },
+        {
+          "id": "sharp_120",
+          "label": "Sharp turns up to 120\u00b0",
+          "count": 12,
+          "url": "/curriculum-montage/agile-curriculum-004-sharp_120.json"
+        },
+        {
+          "id": "rotated_gates",
+          "label": "Independent gate headings",
+          "count": 39,
+          "url": "/curriculum-montage/agile-curriculum-004-rotated_gates.json"
+        },
+        {
+          "id": "hover",
+          "label": "Hover retention",
+          "count": 4,
+          "url": "/curriculum-montage/agile-curriculum-004-hover.json"
+        },
+        {
+          "id": "gentle",
+          "label": "Gentle gates",
+          "count": 5,
+          "url": "/curriculum-montage/agile-curriculum-004-gentle.json"
+        }
+      ],
+      "status": "In progress",
+      "validation": [],
+      "qualified": false
+    }
+  ]
+}

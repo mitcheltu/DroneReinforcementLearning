@@ -1,0 +1,205 @@
+{
+  "schema_version": 1,
+  "config_id": "training-v1",
+  "ppo": {
+    "algorithm": "PPO",
+    "policy": "MlpPolicy",
+    "actor_layers": [
+      256,
+      256
+    ],
+    "critic_layers": [
+      256,
+      256
+    ],
+    "activation": "Tanh",
+    "orthogonal_init": true,
+    "log_std_init": -1,
+    "device": "cpu",
+    "environment_candidates": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "n_steps": 2048,
+    "batch_size": 512,
+    "n_epochs": 10,
+    "gamma": 0.999,
+    "gae_lambda": 0.95,
+    "clip_range": 0.2,
+    "clip_range_vf": null,
+    "normalize_advantage": true,
+    "ent_coef": 0,
+    "vf_coef": 0.5,
+    "max_grad_norm": 0.5,
+    "target_kl": 0.03,
+    "use_sde": false,
+    "stats_window_size": 100,
+    "vec_normalize": false,
+    "budget_transitions": 10000000,
+    "learning_rate": {
+      "start": 0.0003,
+      "end": 0.00003,
+      "schedule": "global-linear"
+    }
+  },
+  "curriculum": {
+    "frontier_probability": 0.8,
+    "previous_probability": 0.2,
+    "promotion_interval_transitions": 131072,
+    "promotion_cases": 64,
+    "promotion_successes": 61,
+    "consecutive_passes": 2,
+    "min_frontier_transitions": 131072,
+    "speed_completion_threshold": 0.95,
+    "stages": [
+      {
+        "index": 0,
+        "task_kind": "hover",
+        "gate_count": 0,
+        "max_turn_rad": 0,
+        "max_height_change_m": 0,
+        "yaw_jitter_rad": 0,
+        "position_perturbation_m": 0.1,
+        "velocity_perturbation_mps": 0.1,
+        "tilt_perturbation_rad": 0.05235987755982988,
+        "yaw_perturbation_rad": 0.08726646259971647,
+        "rate_perturbation_radps": 0.1
+      },
+      {
+        "index": 1,
+        "task_kind": "race",
+        "gate_count": 1,
+        "max_turn_rad": 0,
+        "max_height_change_m": 0,
+        "yaw_jitter_rad": 0,
+        "position_perturbation_m": 0.1,
+        "velocity_perturbation_mps": 0.1,
+        "tilt_perturbation_rad": 0.05235987755982988,
+        "yaw_perturbation_rad": 0.08726646259971647,
+        "rate_perturbation_radps": 0.1
+      },
+      {
+        "index": 2,
+        "task_kind": "race",
+        "gate_count": 1,
+        "max_turn_rad": 0,
+        "max_height_change_m": 0.25,
+        "yaw_jitter_rad": 0.08726646259971647,
+        "position_perturbation_m": 0.25,
+        "velocity_perturbation_mps": 0.25,
+        "tilt_perturbation_rad": 0.08726646259971647,
+        "yaw_perturbation_rad": 0.17453292519943295,
+        "rate_perturbation_radps": 0.2
+      },
+      {
+        "index": 3,
+        "task_kind": "race",
+        "gate_count": 3,
+        "max_turn_rad": 0,
+        "max_height_change_m": 0,
+        "yaw_jitter_rad": 0,
+        "position_perturbation_m": 0.25,
+        "velocity_perturbation_mps": 0.25,
+        "tilt_perturbation_rad": 0.08726646259971647,
+        "yaw_perturbation_rad": 0.17453292519943295,
+        "rate_perturbation_radps": 0.2
+      },
+      {
+        "index": 4,
+        "task_kind": "race",
+        "gate_count": 3,
+        "max_turn_rad": 0.2617993877991494,
+        "max_height_change_m": 0.5,
+        "yaw_jitter_rad": 0.08726646259971647,
+        "position_perturbation_m": 0.25,
+        "velocity_perturbation_mps": 0.25,
+        "tilt_perturbation_rad": 0.08726646259971647,
+        "yaw_perturbation_rad": 0.17453292519943295,
+        "rate_perturbation_radps": 0.2
+      },
+      {
+        "index": 5,
+        "task_kind": "race",
+        "gate_count": 10,
+        "max_turn_rad": 0.3490658503988659,
+        "max_height_change_m": 0.75,
+        "yaw_jitter_rad": 0.08726646259971647,
+        "position_perturbation_m": 0.25,
+        "velocity_perturbation_mps": 0.25,
+        "tilt_perturbation_rad": 0.08726646259971647,
+        "yaw_perturbation_rad": 0.17453292519943295,
+        "rate_perturbation_radps": 0.2
+      },
+      {
+        "index": 6,
+        "task_kind": "race",
+        "gate_count": 10,
+        "max_turn_rad": 0.5235987755982988,
+        "max_height_change_m": 1.5,
+        "yaw_jitter_rad": 0.17453292519943295,
+        "position_perturbation_m": 0.25,
+        "velocity_perturbation_mps": 0.25,
+        "tilt_perturbation_rad": 0.08726646259971647,
+        "yaw_perturbation_rad": 0.17453292519943295,
+        "rate_perturbation_radps": 0.2
+      }
+    ]
+  },
+  "reward": {
+    "progress_per_m": 0.5,
+    "gate_bonus": 10,
+    "finish_bonus": 50,
+    "reliability_time_per_s": 0.2,
+    "speed_time_per_s": 0.5,
+    "smoothness": 0.02,
+    "failure_cost": 50,
+    "hover": {
+      "alive_per_s": 1,
+      "position_cost": 0.5,
+      "velocity_cost": 0.1,
+      "tilt_cost": 0.1,
+      "rate_cost": 0.02,
+      "smoothness": 0.02,
+      "departure_m": 1,
+      "departure_tilt_rad": 0.5235987755982988,
+      "success_bonus": 5,
+      "failure_cost": 5
+    }
+  },
+  "evaluation": {
+    "root_seeds": [
+      101,
+      202,
+      303
+    ],
+    "promotion_namespace": 10001,
+    "development_namespace": 20001,
+    "final_namespace": 30001,
+    "stress_namespace": 40001,
+    "public_namespace": 50001,
+    "development_cases": 512,
+    "final_cases": 1000,
+    "stress_cases": 100,
+    "public_cases": 12,
+    "release_completion": 0.95,
+    "reproducibility_completion": 0.9
+  },
+  "checkpoint": {
+    "interval_transitions": 32768,
+    "keep_latest": 2,
+    "wall_budget_s": 36000
+  },
+  "recording": {
+    "training_cap_bytes": 1073741824,
+    "evaluation_cap_bytes": 1073741824,
+    "diagnostics_cap_bytes": 33554432,
+    "window_transitions": 1000000,
+    "per_bucket": 2,
+    "writer_queue": 8,
+    "evaluation_comparison_cases": 16,
+    "final_per_outcome": 32,
+    "priority_version": "retention-v1"
+  }
+}

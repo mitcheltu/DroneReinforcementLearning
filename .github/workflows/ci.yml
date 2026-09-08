@@ -1,0 +1,38 @@
+name: Contracts and training
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  contracts:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v6
+        with:
+          version: "0.11.32"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+      - run: uv sync --frozen --extra learning
+      - run: npm ci
+        working-directory: web
+      - run: uv run --frozen --extra learning pytest -q
+      - run: uv run --frozen --extra learning ruff check training
+      - run: uv run --frozen --extra learning mypy
+      - run: npm run typecheck
+        working-directory: web
+      - run: npm run lint
+        working-directory: web
+      - run: npm run test:unit
+        working-directory: web
+      - run: npm run test:integration
+        working-directory: web
+      - run: npm run build
+        working-directory: web

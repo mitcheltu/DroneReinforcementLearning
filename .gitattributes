@@ -1,0 +1,6 @@
+* text=auto eol=lf
+*.onnx binary
+*.f64 binary
+*.f32 binary
+*.u32 binary
+*.zip binary

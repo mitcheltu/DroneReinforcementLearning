@@ -1,0 +1,157 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:aerorl:schema:model:v1",
+  "title": "AeroRL model v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "model_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "created_utc": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "training_run_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "checkpoint_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "training_transitions": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "training_seed": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 9007199254740991
+    },
+    "code_commit": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{40}$"
+    },
+    "actor_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "actor_file": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-]+\\.onnx$"
+    },
+    "onnx_opset": {
+      "const": 17
+    },
+    "input_name": {
+      "const": "obs"
+    },
+    "input_shape": {
+      "const": [
+        1,
+        40
+      ]
+    },
+    "output_name": {
+      "const": "action"
+    },
+    "output_shape": {
+      "const": [
+        1,
+        4
+      ]
+    },
+    "dtype": {
+      "const": "float32"
+    },
+    "observation_schema_id": {
+      "const": "obs-bodyrate-v1"
+    },
+    "action_schema_id": {
+      "const": "collective-bodyrate-v1"
+    },
+    "simulator_id": {
+      "const": "quadrotor-rk4-v1"
+    },
+    "controller_id": {
+      "const": "rate-p-v1"
+    },
+    "vehicle_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "observation_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "rules_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "training_config_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "physics_hz": {
+      "const": 120
+    },
+    "policy_hz": {
+      "const": 60
+    },
+    "python_lock_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "javascript_lock_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "evaluation_report_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 256
+    }
+  },
+  "required": [
+    "schema_version",
+    "model_id",
+    "created_utc",
+    "training_run_id",
+    "checkpoint_id",
+    "training_transitions",
+    "training_seed",
+    "code_commit",
+    "actor_sha256",
+    "actor_file",
+    "onnx_opset",
+    "input_name",
+    "input_shape",
+    "output_name",
+    "output_shape",
+    "dtype",
+    "observation_schema_id",
+    "action_schema_id",
+    "simulator_id",
+    "controller_id",
+    "vehicle_sha256",
+    "observation_sha256",
+    "rules_sha256",
+    "training_config_sha256",
+    "physics_hz",
+    "policy_hz",
+    "python_lock_sha256",
+    "javascript_lock_sha256",
+    "evaluation_report_sha256",
+    "license"
+  ],
+  "additionalProperties": false
+}

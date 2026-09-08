@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:aerorl:schema:state:v1",
+  "title": "AeroRL state v1",
+  "type": "object",
+  "properties": {
+    "position_m": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "quaternion_wxyz": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "minimum": -1.000001,
+        "maximum": 1.000001
+      },
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "velocity_world_mps": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "omega_body_radps": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "motor_thrust_n": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "minimum": 0,
+        "maximum": 4
+      },
+      "minItems": 4,
+      "maxItems": 4
+    }
+  },
+  "required": [
+    "position_m",
+    "quaternion_wxyz",
+    "velocity_world_mps",
+    "omega_body_radps",
+    "motor_thrust_n"
+  ],
+  "additionalProperties": false
+}

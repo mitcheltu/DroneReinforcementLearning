@@ -1,0 +1,252 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:aerorl:schema:course-rules:v1",
+  "title": "AeroRL course-rules v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "rules_id": {
+      "type": "string",
+      "const": "course-rules-v1"
+    },
+    "standard_gate_count": {
+      "type": "integer",
+      "const": 10
+    },
+    "workspace_min_m": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "items": false,
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "workspace_max_m": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "items": false,
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "gate": {
+      "type": "object",
+      "properties": {
+        "width_m": {
+          "type": "number",
+          "const": 2.5
+        },
+        "height_m": {
+          "type": "number",
+          "const": 2.5
+        },
+        "frame_bar_m": {
+          "type": "number",
+          "const": 0.1
+        },
+        "frame_depth_m": {
+          "type": "number",
+          "const": 0.1
+        }
+      },
+      "required": [
+        "width_m",
+        "height_m",
+        "frame_bar_m",
+        "frame_depth_m"
+      ],
+      "additionalProperties": false
+    },
+    "gate_center_height_m": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "horizontal_spacing_m": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "number"
+        }
+      ],
+      "items": false,
+      "minItems": 2,
+      "maxItems": 2
+    },
+    "max_height_change_m": {
+      "type": "number",
+      "minimum": 0
+    },
+    "max_turn_rad": {
+      "type": "number",
+      "minimum": 0
+    },
+    "max_approach_rad": {
+      "type": "number",
+      "minimum": 0
+    },
+    "max_outgoing_rad": {
+      "type": "number",
+      "minimum": 0
+    },
+    "max_heading_drift_rad": {
+      "type": "number",
+      "minimum": 0
+    },
+    "frame_boundary_margin_m": {
+      "type": "number",
+      "minimum": 0
+    },
+    "frame_aabb_expansion_m": {
+      "type": "number",
+      "minimum": 0
+    },
+    "route_intersection_height_m": {
+      "type": "number",
+      "minimum": 0
+    },
+    "start_max_height_change_m": {
+      "type": "number",
+      "minimum": 0
+    },
+    "timeouts_s": {
+      "type": "object",
+      "properties": {
+        "hover": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "one_gate": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "three_gates": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "ten_gates": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      },
+      "required": [
+        "hover",
+        "one_gate",
+        "three_gates",
+        "ten_gates"
+      ],
+      "additionalProperties": false
+    },
+    "generator": {
+      "type": "object",
+      "properties": {
+        "version": {
+          "type": "string",
+          "const": "course-generator-v1"
+        },
+        "uuid_namespace": {
+          "type": "string",
+          "const": "ca2d61ea-1dc2-4bd4-894e-d6a8a29e41f1"
+        },
+        "max_proposals": {
+          "type": "number"
+        },
+        "max_reset_proposals": {
+          "type": "number"
+        },
+        "start_height_m": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        },
+        "hover_xy_m": {
+          "type": "array",
+          "prefixItems": [
+            {
+              "type": "number"
+            },
+            {
+              "type": "number"
+            }
+          ],
+          "items": false,
+          "minItems": 2,
+          "maxItems": 2
+        }
+      },
+      "required": [
+        "version",
+        "uuid_namespace",
+        "max_proposals",
+        "max_reset_proposals",
+        "start_height_m",
+        "hover_xy_m"
+      ],
+      "additionalProperties": false
+    }
+  },
+  "required": [
+    "schema_version",
+    "rules_id",
+    "standard_gate_count",
+    "workspace_min_m",
+    "workspace_max_m",
+    "gate",
+    "gate_center_height_m",
+    "horizontal_spacing_m",
+    "max_height_change_m",
+    "max_turn_rad",
+    "max_approach_rad",
+    "max_outgoing_rad",
+    "max_heading_drift_rad",
+    "frame_boundary_margin_m",
+    "frame_aabb_expansion_m",
+    "route_intersection_height_m",
+    "start_max_height_change_m",
+    "timeouts_s",
+    "generator"
+  ],
+  "additionalProperties": false
+}

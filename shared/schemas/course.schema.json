@@ -1,0 +1,241 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:aerorl:schema:course:v1",
+  "title": "AeroRL course v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "course_id": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 80,
+      "pattern": "^[^\\u0000-\\u001f\\u007f-\\u009f]*$"
+    },
+    "mode": {
+      "enum": [
+        "standard",
+        "curriculum",
+        "experimental"
+      ]
+    },
+    "gates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$"
+          },
+          "label": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 10
+          },
+          "center_m": {
+            "type": "array",
+            "items": {
+              "type": "number"
+            },
+            "minItems": 3,
+            "maxItems": 3
+          },
+          "yaw_rad": {
+            "type": "number",
+            "minimum": -3.141592653589793,
+            "exclusiveMaximum": 3.141592653589793
+          },
+          "width_m": {
+            "const": 2.5
+          },
+          "height_m": {
+            "const": 2.5
+          },
+          "frame_bar_m": {
+            "const": 0.1
+          },
+          "frame_depth_m": {
+            "const": 0.1
+          }
+        },
+        "required": [
+          "id",
+          "label",
+          "center_m",
+          "yaw_rad",
+          "width_m",
+          "height_m",
+          "frame_bar_m",
+          "frame_depth_m"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 10
+    },
+    "initial_state": {
+      "$ref": "urn:aerorl:schema:state:v1"
+    },
+    "start_reference_m": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "generator": {
+      "anyOf": [
+        {
+          "type": "object",
+          "properties": {
+            "version": {
+              "enum": [
+                "course-generator-v1",
+                "stress-generator-v1"
+              ]
+            },
+            "seed": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]{0,19})$"
+            },
+            "reset_seed": {
+              "type": "string",
+              "pattern": "^(0|[1-9][0-9]{0,19})$"
+            },
+            "stage": {
+              "type": "integer",
+              "minimum": 0,
+              "maximum": 6
+            },
+            "attempt_count": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 512
+            }
+          },
+          "required": [
+            "version",
+            "seed",
+            "reset_seed",
+            "stage",
+            "attempt_count"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "rules_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "required": [
+    "schema_version",
+    "course_id",
+    "name",
+    "mode",
+    "gates",
+    "initial_state",
+    "start_reference_m",
+    "generator",
+    "rules_sha256"
+  ],
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "mode": {
+            "enum": [
+              "standard",
+              "experimental"
+            ]
+          }
+        },
+        "required": [
+          "mode"
+        ]
+      },
+      "then": {
+        "properties": {
+          "gates": {
+            "type": "array",
+            "minItems": 10,
+            "maxItems": 10
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "gates": {
+            "type": "array",
+            "anyOf": [
+              {
+                "minItems": 0,
+                "maxItems": 0
+              },
+              {
+                "minItems": 1,
+                "maxItems": 1
+              },
+              {
+                "minItems": 3,
+                "maxItems": 3
+              },
+              {
+                "minItems": 10,
+                "maxItems": 10
+              }
+            ]
+          },
+          "generator": {
+            "type": "object",
+            "properties": {
+              "version": {
+                "enum": [
+                  "course-generator-v1",
+                  "stress-generator-v1"
+                ]
+              },
+              "seed": {
+                "type": "string",
+                "pattern": "^(0|[1-9][0-9]{0,19})$"
+              },
+              "reset_seed": {
+                "type": "string",
+                "pattern": "^(0|[1-9][0-9]{0,19})$"
+              },
+              "stage": {
+                "type": "integer",
+                "minimum": 0,
+                "maximum": 6
+              },
+              "attempt_count": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 512
+              }
+            },
+            "required": [
+              "version",
+              "seed",
+              "reset_seed",
+              "stage",
+              "attempt_count"
+            ],
+            "additionalProperties": false
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:aerorl:schema:config:v1",
+  "title": "AeroRL config v1",
+  "oneOf": [
+    {
+      "$ref": "urn:aerorl:schema:vehicle:v1"
+    },
+    {
+      "$ref": "urn:aerorl:schema:observation:v1"
+    },
+    {
+      "$ref": "urn:aerorl:schema:course-rules:v1"
+    },
+    {
+      "$ref": "urn:aerorl:schema:training:v1"
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+{
+  "schema_version": 1,
+  "schema_id": "obs-bodyrate-v1",
+  "dimension": 40,
+  "dtype": "float32",
+  "missing_gate_value": 0,
+  "fields": [
+    {
+      "index": 0,
+      "name": "velocity_body_x",
+      "scale": 15,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 1,
+      "name": "velocity_body_y",
+      "scale": 15,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 2,
+      "name": "velocity_body_z",
+      "scale": 15,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 3,
+      "name": "omega_body_x",
+      "scale": 12,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 4,
+      "name": "omega_body_y",
+      "scale": 12,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 5,
+      "name": "omega_body_z",
+      "scale": 12,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 6,
+      "name": "gravity_body_x",
+      "scale": 1,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 7,
+      "name": "gravity_body_y",
+      "scale": 1,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 8,
+      "name": "gravity_body_z",
+      "scale": 1,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 9,
+      "name": "current_gate_center_body_x",
+      "scale": 40,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 10,
+      "name": "current_gate_center_body_y",
+      "scale": 40,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 11,
+      "name": "current_gate_center_body_z",
+      "scale": 40,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 12,
+      "name": "current_gate_normal_body_x",
+      "scale": 1,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 13,
+      "name": "current_gate_normal_body_y",
+      "scale": 1,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 14,
+      "name": "current_gate_normal_body_z",
+      "scale": 1,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 15,
+      "name": "following_gate_center_body_x",
+      "scale": 80,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 16,
+      "name": "following_gate_center_body_y",
+      "scale": 80,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 17,
+      "name": "following_gate_center_body_z",
+      "scale": 80,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 18,
+      "name": "following_gate_normal_body_x",
+      "scale": 1,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 19,
+      "name": "following_gate_normal_body_y",
+      "scale": 1,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 20,
+      "name": "following_gate_normal_body_z",
+      "scale": 1,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 21,
+      "name": "ground_clearance",
+      "scale": 20,
+      "minimum": 0,
+      "maximum": 1
+    },
+    {
+      "index": 22,
+      "name": "previous_collective",
+      "scale": 1,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 23,
+      "name": "previous_roll_rate",
+      "scale": 1,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 24,
+      "name": "previous_pitch_rate",
+      "scale": 1,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 25,
+      "name": "previous_yaw_rate",
+      "scale": 1,
+      "minimum": -1,
+      "maximum": 1
+    },
+    {
+      "index": 26,
+      "name": "motor_thrust_0",
+      "scale": 4,
+      "minimum": 0,
+      "maximum": 1
+    },
+    {
+      "index": 27,
+      "name": "motor_thrust_1",
+      "scale": 4,
+      "minimum": 0,
+      "maximum": 1
+    },
+    {
+      "index": 28,
+      "name": "motor_thrust_2",
+      "scale": 4,
+      "minimum": 0,
+      "maximum": 1
+    },
+    {
+      "index": 29,
+      "name": "motor_thrust_3",
+      "scale": 4,
+      "minimum": 0,
+      "maximum": 1
+    },
+    {
+      "index": 30,
+      "name": "current_gate_present",
+      "scale": 1,
+      "minimum": 0,
+      "maximum": 1
+    },
+    {
+      "index": 31,
+      "name": "following_gate_present",
+      "scale": 1,
+      "minimum": 0,
+      "maximum": 1
+    },
+    {
+      "index": 32,
+      "name": "clearance_xmin",
+      "scale": 120,
+      "minimum": 0,
+      "maximum": 1
+    },
+    {
+      "index": 33,
+      "name": "clearance_xmax",
+      "scale": 120,
+      "minimum": 0,
+      "maximum": 1
+    },
+    {
+      "index": 34,
+      "name": "clearance_ymin",
+      "scale": 120,
+      "minimum": 0,
+      "maximum": 1
+    },
+    {
+      "index": 35,
+      "name": "clearance_ymax",
+      "scale": 120,
+      "minimum": 0,
+      "maximum": 1
+    },
+    {
+      "index": 36,
+      "name": "clearance_zmin",
+      "scale": 20,
+      "minimum": 0,
+      "maximum": 1
+    },
+    {
+      "index": 37,
+      "name": "clearance_zmax",
+      "scale": 20,
+      "minimum": 0,
+      "maximum": 1
+    },
+    {
+      "index": 38,
+      "name": "gates_remaining",
+      "scale": 10,
+      "minimum": 0,
+      "maximum": 1
+    },
+    {
+      "index": 39,
+      "name": "time_remaining_fraction",
+      "scale": 1,
+      "minimum": 0,
+      "maximum": 1
+    }
+  ]
+}

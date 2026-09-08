@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "rules_id": "course-rules-v1",
+  "standard_gate_count": 10,
+  "workspace_min_m": [
+    -60,
+    -60,
+    0
+  ],
+  "workspace_max_m": [
+    60,
+    60,
+    20
+  ],
+  "gate": {
+    "width_m": 2.5,
+    "height_m": 2.5,
+    "frame_bar_m": 0.1,
+    "frame_depth_m": 0.1
+  },
+  "gate_center_height_m": [
+    3,
+    10
+  ],
+  "horizontal_spacing_m": [
+    6,
+    8
+  ],
+  "max_height_change_m": 1.5,
+  "max_turn_rad": 0.5235987755982988,
+  "max_approach_rad": 0.17453292519943295,
+  "max_outgoing_rad": 0.6981317007977318,
+  "max_heading_drift_rad": 1.0471975511965976,
+  "frame_boundary_margin_m": 0.5,
+  "frame_aabb_expansion_m": 0.3,
+  "route_intersection_height_m": 3,
+  "start_max_height_change_m": 0.25,
+  "timeouts_s": {
+    "hover": 5,
+    "one_gate": 12,
+    "three_gates": 20,
+    "ten_gates": 45
+  },
+  "generator": {
+    "version": "course-generator-v1",
+    "uuid_namespace": "ca2d61ea-1dc2-4bd4-894e-d6a8a29e41f1",
+    "max_proposals": 512,
+    "max_reset_proposals": 64,
+    "start_height_m": [
+      4,
+      6
+    ],
+    "hover_xy_m": [
+      -10,
+      10
+    ]
+  }
+}

@@ -1,0 +1,336 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:aerorl:schema:vehicle:v1",
+  "title": "AeroRL vehicle v1",
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "type": "integer",
+      "const": 1
+    },
+    "simulator_id": {
+      "type": "string",
+      "const": "quadrotor-rk4-v1"
+    },
+    "controller_id": {
+      "type": "string",
+      "const": "rate-p-v1"
+    },
+    "world_frame": {
+      "type": "string",
+      "const": "right-handed-z-up"
+    },
+    "body_frame": {
+      "type": "string",
+      "const": "x-forward-y-left-z-up"
+    },
+    "quaternion_order": {
+      "type": "string",
+      "const": "wxyz"
+    },
+    "mass_kg": {
+      "type": "number",
+      "minimum": 5e-324
+    },
+    "gravity_mps2": {
+      "type": "number",
+      "minimum": 5e-324
+    },
+    "inertia_kgm2": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "minimum": 5e-324
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "arm_length_m": {
+      "type": "number",
+      "minimum": 5e-324
+    },
+    "rotor_max_thrust_n": {
+      "type": "number",
+      "minimum": 5e-324
+    },
+    "motor_time_constant_s": {
+      "type": "number",
+      "minimum": 5e-324
+    },
+    "linear_drag_kgps": {
+      "type": "number",
+      "minimum": 0
+    },
+    "reaction_torque_per_thrust_m": {
+      "type": "number",
+      "minimum": 5e-324
+    },
+    "rate_gains": {
+      "type": "array",
+      "items": {
+        "type": "number",
+        "minimum": 0
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "collision_radius_m": {
+      "type": "number",
+      "minimum": 5e-324
+    },
+    "gate_pass_margin_m": {
+      "type": "number",
+      "minimum": 0
+    },
+    "physics_hz": {
+      "type": "integer",
+      "const": 120
+    },
+    "policy_hz": {
+      "type": "integer",
+      "const": 60
+    },
+    "geometry_epsilon_m": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "quaternion_input_tolerance": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "quaternion_min_norm": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "motor_roundoff_tolerance_n": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "state_limit_speed_mps": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "state_limit_rate_radps": {
+      "type": "number",
+      "exclusiveMinimum": 0
+    },
+    "action": {
+      "type": "object",
+      "properties": {
+        "schema_id": {
+          "type": "string",
+          "const": "collective-bodyrate-v1"
+        },
+        "dimension": {
+          "type": "integer",
+          "const": 4
+        },
+        "minimum": {
+          "type": "number"
+        },
+        "maximum": {
+          "type": "number"
+        },
+        "max_collective_n": {
+          "type": "number"
+        },
+        "max_body_rates_radps": {
+          "type": "array",
+          "items": {
+            "type": "number",
+            "exclusiveMinimum": 0
+          },
+          "minItems": 3,
+          "maxItems": 3
+        }
+      },
+      "required": [
+        "schema_id",
+        "dimension",
+        "minimum",
+        "maximum",
+        "max_collective_n",
+        "max_body_rates_radps"
+      ],
+      "additionalProperties": false
+    },
+    "rotors": {
+      "type": "array",
+      "prefixItems": [
+        {
+          "type": "object",
+          "properties": {
+            "index": {
+              "type": "integer",
+              "const": 0
+            },
+            "position_m": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "items": false,
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "reaction_sign": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "index",
+            "position_m",
+            "reaction_sign"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "index": {
+              "type": "integer",
+              "const": 1
+            },
+            "position_m": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "items": false,
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "reaction_sign": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "index",
+            "position_m",
+            "reaction_sign"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "index": {
+              "type": "integer",
+              "const": 2
+            },
+            "position_m": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "items": false,
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "reaction_sign": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "index",
+            "position_m",
+            "reaction_sign"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "index": {
+              "type": "integer",
+              "const": 3
+            },
+            "position_m": {
+              "type": "array",
+              "prefixItems": [
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "number"
+                }
+              ],
+              "items": false,
+              "minItems": 3,
+              "maxItems": 3
+            },
+            "reaction_sign": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "index",
+            "position_m",
+            "reaction_sign"
+          ],
+          "additionalProperties": false
+        }
+      ],
+      "items": false,
+      "minItems": 4,
+      "maxItems": 4
+    }
+  },
+  "required": [
+    "schema_version",
+    "simulator_id",
+    "controller_id",
+    "world_frame",
+    "body_frame",
+    "quaternion_order",
+    "mass_kg",
+    "gravity_mps2",
+    "inertia_kgm2",
+    "arm_length_m",
+    "rotor_max_thrust_n",
+    "motor_time_constant_s",
+    "linear_drag_kgps",
+    "reaction_torque_per_thrust_m",
+    "rate_gains",
+    "collision_radius_m",
+    "gate_pass_margin_m",
+    "physics_hz",
+    "policy_hz",
+    "geometry_epsilon_m",
+    "quaternion_input_tolerance",
+    "quaternion_min_norm",
+    "motor_roundoff_tolerance_n",
+    "state_limit_speed_mps",
+    "state_limit_rate_radps",
+    "action",
+    "rotors"
+  ],
+  "additionalProperties": false
+}
