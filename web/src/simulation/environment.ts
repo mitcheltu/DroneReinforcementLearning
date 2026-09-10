@@ -60,7 +60,7 @@ export function collision(a:number[],b:number[],gates:Gate[]):{fraction:number;t
 export class FlightEnvironment{
   state:number[];previous=[0,0,0,0];elapsed=0;tick=0;target=0;reward=0;outcome="running";
   events:Event[]=[];physics=new Quadrotor(vehicle);timeout:number;
-  constructor(readonly course:CourseV1,profile:"original"|"agile"="original"){
+  constructor(readonly course:CourseV1,profile:"original"|"agile"="original",readonly solidGates=true){
     const s=course.initial_state;
     this.state=[...s.position_m,...s.quaternion_wxyz,...s.velocity_world_mps,...s.omega_body_radps,...s.motor_thrust_n];
     this.timeout=({0:5,1:12,3:20,10:45} as Record<number,number>)[course.gates.length]!;
@@ -74,6 +74,34 @@ export class FlightEnvironment{
     const body=(v:readonly number[])=>[0,1,2].map(i=>r.reduce((sum,row,j)=>sum+row[i]!*v[j]!,0));
     const previous=[...body(sub(gate.center_m,this.state.slice(0,3))).map(v=>v/40),...body([Math.cos(gate.yaw_rad),Math.sin(gate.yaw_rad),0])];
     return Float32Array.from([...values,...previous.map(v=>Math.max(-1,Math.min(1,v)))]);
+  }
+  obstacleObservation():Float32Array{
+    const values=new Float32Array(109);values.set(this.agileObservation());
+    const r=rotation(this.state.slice(3,7));
+    const body=(v:readonly number[])=>[0,1,2].map(i=>r.reduce((sum,row,j)=>sum+row[i]!*v[j]!,0));
+    const gates=this.course.gates.map((gate,index)=>({gate,index,distance:norm(sub(gate.center_m,this.state.slice(0,3)))}))
+      .filter(({index})=>index!==this.target).sort((a,b)=>a.distance-b.distance||a.index-b.index).slice(0,9);
+    gates.forEach(({gate},slot)=>values.set([...body(sub(gate.center_m,this.state.slice(0,3))).map(v=>v/200),
+      ...body([Math.cos(gate.yaw_rad),Math.sin(gate.yaw_rad),0]),1].map(v=>Math.max(-1,Math.min(1,v))),46+slot*7));
+    return values;
+  }
+  recoveryObservation():Float32Array{
+    const r=rotation(this.state.slice(3,7));
+    const body=(v:readonly number[])=>[0,1,2].map(i=>r.reduce((sum,row,j)=>sum+row[i]!*v[j]!,0));
+    const extra:number[]=[];
+    for(const index of [this.target,this.target+1,this.target-1]){
+      const gate=this.course.gates[index];
+      if(!gate){extra.push(0,0,0,0,0,0,0);continue;}
+      const delta=body(sub(gate.center_m,this.state.slice(0,3))),distance=norm(delta);
+      extra.push(...delta.map(v=>v/200),...delta.map(v=>v/Math.max(distance,1e-9)),distance/200);
+    }
+    extra.push((this.state[2]!-.3)/20);
+    for(let axis=0;axis<3;axis++){
+      const scale=axis===2?20:120;
+      extra.push((this.state[axis]!-.3-rules.workspace_min_m[axis]!)/scale,
+        (rules.workspace_max_m[axis]!-this.state[axis]!-.3)/scale);
+    }
+    return Float32Array.from([...this.agileObservation(),...extra.map(v=>Math.max(-1,Math.min(1,v)))]);
   }
   observation():Float32Array{
     const raw=new Array<number>(40).fill(0),s=this.state,R=rotation(s.slice(3,7));
@@ -102,7 +130,7 @@ export class FlightEnvironment{
     for(let i=0;i<2;i++){
       const before=this.state.slice(),h=this.physics.dt,motor=motorCommand(before,cmd.collective,cmd.rates,this.physics);
       const after=this.physics.step(before,motor.motors),a=before.slice(0,3),b=after.slice(0,3);
-      const hit=collision(a,b,gates),gate=gates[this.target],cross=gate?crossing(a,b,gate):null;
+      const hit=collision(a,b,this.solidGates?gates:[]),gate=gates[this.target],cross=gate?crossing(a,b,gate):null;
       let fraction=hit?.fraction??1;reason=hit?.type??null;
       if(cross&&cross.type!=="gate_pass"&&cross.fraction<fraction)this.events.push({time:this.elapsed+h*cross.fraction,type:cross.type,label:this.target+1});
       if(cross?.type==="gate_pass"&&(!hit||cross.fraction<hit.fraction-1e-9)){

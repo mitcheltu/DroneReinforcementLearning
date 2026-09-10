@@ -18,7 +18,7 @@ function Gate({gate,index,color,editor}:{gate:CourseV1["gates"][number];index:nu
       <mesh position={[0,0,side*(gate.height_m/2+.05)]}><boxGeometry args={[.1,gate.width_m,.1]}/><meshStandardMaterial color={selected?"#ffd875":color}/></mesh>
     </group>)}
     {editor&&<arrowHelper args={[new Vector3(1,0,0),new Vector3(0,0,0),2,selected?0xffd875:0x61cfe0,.35,.2]}/>}
-    <Html position={[0,0,gate.height_m/2+.6]} center style={{color:"#e4e9f0",fontSize:16,pointerEvents:"none"}}>{gate.label}</Html>
+    <Html position={[0,0,gate.height_m/2+.6]} center occlude style={{color:"#e4e9f0",fontSize:16,pointerEvents:"none"}}>{gate.label}</Html>
   </group>{selected&&editor&&<TransformControls object={group} mode={editor.mode} space="world" showX={editor.mode==="translate"} showY={editor.mode==="translate"} showZ size={.85} onObjectChange={()=>{const g=group.current;editor.onChange([g.position.x,g.position.y,g.position.z],g.rotation.z);}}/>}</>;
 }
 
