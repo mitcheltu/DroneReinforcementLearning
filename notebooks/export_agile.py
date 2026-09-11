@@ -13,14 +13,15 @@ from stable_baselines3 import PPO
 from training.learning.export import Actor
 
 
-def run(directory):
+def run(directory, checkpoint=None):
     directory=Path(directory).resolve()
     report=json.loads((directory/"report.json").read_text())
-    model=PPO.load(report["selected_model"],device="cpu")
+    selected=directory/checkpoint if checkpoint else Path(report["selected_model"])
+    model=PPO.load(selected,device="cpu")
     torch.set_num_threads(1)
     actor=Actor(model.policy).eval()
     width=model.observation_space.shape[0]
-    target=directory/"candidate.onnx"
+    target=directory/("experimental-latest.onnx" if checkpoint else "candidate.onnx")
     torch.onnx.export(actor,torch.zeros(1,width),str(target),opset_version=17,
                       input_names=["observation"],output_names=["action"],
                       dynamic_axes={"observation":{0:"batch"},"action":{0:"batch"}},dynamo=False)
@@ -42,14 +43,15 @@ def run(directory):
         raise AssertionError(f"ONNX parity failed: {error}; candidate must not be deployed")
     manifest=dict(input_dimension=width,output_dimension=4,max_absolute_error=error,cases=len(values),
                   sha256=hashlib.sha256(target.read_bytes()).hexdigest(),
-                  curriculum_screen_passed=report["release_ready"],
-                  browser_deployed=False,observation_contract="agile-previous-gate-v2" if width==46 else "obs-bodyrate-v1",
+                  checkpoint=str(selected), curriculum_screen_passed=False if checkpoint else report["release_ready"],
+                  browser_deployed=False,observation_contract={40:"obs-bodyrate-v1",46:"agile-previous-gate-v2",109:"agile-other-gates-v1"}[width],
                   timeout_s={0:5,1:60,3:180,10:600},mastered_level=report["mastered_level"])
-    (directory/"export-report.json").write_text(json.dumps(manifest,indent=2))
+    (directory/("experimental-export-report.json" if checkpoint else "export-report.json")).write_text(json.dumps(manifest,indent=2))
     print(json.dumps(manifest,indent=2),flush=True)
 
 
 if __name__=="__main__":
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("directory")
-    run(parser.parse_args().directory)
+    parser.add_argument("--checkpoint", help="Explicit experimental checkpoint; never claims the selected-model release result")
+    run(**vars(parser.parse_args()))

@@ -72,8 +72,9 @@ The preceding sections describe experiment 001. They do not describe every later
 | --- | --- | --- | --- |
 | 001 | 40 / 25 | Expanded layouts, imitation and guarded PPO | Did not qualify; 0/8 mixed ten-gate routes |
 | 002 | 46 / 31 | Previous-gate observation and a waypoint-based teacher | Did not qualify; teacher's hidden waypoint phase was not observable by the actor |
-| 003 | 46 / 31 | Memoryless teacher; independent headings precede reversals | Running; inspect its report when complete |
-| 004 | 46 / 39 | Gate-entry braking, segment-based previous-gate avoidance, geometric features and balanced labels | Running; inspect its report when complete |
+| 003 | 46 / 31 | Memoryless teacher; independent headings precede reversals | Finished; promoted through level 5, did not qualify |
+| 004 | 46 / 39 | Gate-entry braking, segment-based previous-gate avoidance, geometric features and balanced labels | 8/8 in each shorter-course group, 5/8 mixed ten-gate routes; did not qualify |
+| 005 | 109 / 138 | Full other-gate observations and collision-aware roadmap demonstrations | Training; see [OBSTACLE_TRAINING.md](OBSTACLE_TRAINING.md) |
 
 Runs 003 and 004 use levels 0 gentle, 1 wide spacing, 2 turns up to 60 degrees, 3 sharp turns up to 120 degrees, 4 independent headings, 5 reversals, 6 mixed three-gate routes, and 7 mixed ten-gate routes. Gates are still traversed in array order, numbered 1 through the course's gate count. Course position and heading are randomized at reset; they do not move during an episode. Heading rotation here means yaw about the vertical axis. These experiments do not train tilted gates with arbitrary pitch or roll.
 

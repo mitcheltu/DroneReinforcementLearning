@@ -6,7 +6,7 @@ from pathlib import Path
 
 import numpy as np
 
-def run(directory, version='v4'):
+def run(directory, version='v4', limit=7):
     module = importlib.import_module(f'notebooks.agile_{version}')
     DroneEnv, expert = module.DroneEnv, module.expert
     directory = Path(directory)
@@ -46,10 +46,13 @@ def run(directory, version='v4'):
         print(json.dumps({k: v for k, v in row.items() if k not in ('terminal_state', 'nearest_gates')}
                          | {'nearest_gate': nearest[0]}), flush=True)
         env.close()
+        if len(rows)>=limit:
+            break
 
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('directory')
-    parser.add_argument('--version', choices=['v4', 'v5'], default='v4')
+    parser.add_argument('--version', choices=['v4', 'v5', 'obstacles'], default='v4')
+    parser.add_argument('--limit', type=int, default=7)
     run(**vars(parser.parse_args()))
