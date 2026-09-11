@@ -1,0 +1,20 @@
+{
+  "input_dimension": 46,
+  "output_dimension": 4,
+  "max_absolute_error": 9.5367431640625e-07,
+  "cases": 2039,
+  "sha256": "99d0772831eed7534e38a7ec2c88b0836e96b6165f60604f5c76e61b2832ec78",
+  "checkpoint": "C:\\Users\\mitch\\Drone Flight Simulator\\runs\\agile-curriculum-006\\level-9-round-3\\model.zip",
+  "curriculum_screen_passed": false,
+  "browser_deployed": true,
+  "deployment_status": "experimental-user-requested",
+  "collision_mode": "non-solid-gates",
+  "observation_contract": "agile-previous-gate-v2",
+  "timeout_s": {
+    "0": 5,
+    "1": 60,
+    "3": 180,
+    "10": 600
+  },
+  "mastered_level": 7
+}

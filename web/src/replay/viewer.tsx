@@ -9,6 +9,7 @@ import GatePanel from "../editor/panel";
 import {editGate,courseErrors} from "../editor/course";
 
 const Scene=dynamic(()=>import("./scene"),{ssr:false});
+const basePath=process.env.NEXT_PUBLIC_BASE_PATH??"";
 function preview(course:CourseV1):Replay{const s=course.initial_state;return {course,stage:6,states:Float64Array.from([0,...s.position_m,...s.quaternion_wxyz,...s.velocity_world_mps,...s.omega_body_radps,...s.motor_thrust_n]),count:1,duration:0,reward:0,outcome:"course_preview",events:[]};}
 
 export default function Viewer(){
@@ -30,7 +31,7 @@ export default function Viewer(){
   const [error,setError]=useState("");
   useEffect(()=>{
     const controller=new AbortController();
-    fetch("/courses.json",{signal:controller.signal}).then(r=>{if(!r.ok)throw new Error("Could not load the gates. Please reload.");return r.json();})
+    fetch(`${basePath}/courses.json`,{signal:controller.signal}).then(r=>{if(!r.ok)throw new Error("Could not load the gates. Please reload.");return r.json();})
       .then((courses:{stage:number;variant:number;course:CourseV1}[])=>{
         const initial=courses.find(c=>c.stage===6&&c.variant===1)?.course;
         if(!initial)throw new Error("The ten-gate course is unavailable.");

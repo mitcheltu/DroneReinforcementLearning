@@ -4,6 +4,11 @@ import type { NextConfig } from "next";
 const config: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  ...(process.env.GITHUB_PAGES === "true" ? {
+    output: "export" as const,
+    basePath: process.env.NEXT_PUBLIC_BASE_PATH ?? "",
+    trailingSlash: true,
+  } : {}),
   // The simulator imports its shared JSON contracts from the repository-level
   // `shared/` directory. This is required for both dev and production builds.
   experimental: {

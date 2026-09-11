@@ -6,6 +6,8 @@ let flight:FlightEnvironment|null=null,session:ort.InferenceSession|null=null;
 let active=false,generation=0;
 let sessionModel="";
 const sleep=(ms:number)=>new Promise(resolve=>setTimeout(resolve,ms));
+const basePath=process.env.NEXT_PUBLIC_BASE_PATH??"";
+const staticDeployment=process.env.GITHUB_PAGES==="true";
 self.onmessage=async(event:MessageEvent<{type:string;course?:CourseV1;fast?:boolean;policy?:string}>)=>{
   if(event.data.type!=="start"){active=false;generation++;return;}
   const token=++generation;active=true;
@@ -16,7 +18,7 @@ self.onmessage=async(event:MessageEvent<{type:string;course?:CourseV1;fast?:bool
     let recovery=false;
     let activeVersion="";
     if(managed){
-      const response=await fetch(`${self.location.origin}/api/policy`,{cache:"no-store"});
+      const response=await fetch(staticDeployment?`${basePath}/models/active-policy.json`:`${self.location.origin}/api/policy`,{cache:"no-store"});
       if(!response.ok)throw new Error("The active policy could not be loaded");
       const manifest=await response.json();
       recovery=manifest.observation_contract==="recovery-workspace-v8"&&manifest.input_dimension===74;
@@ -24,12 +26,12 @@ self.onmessage=async(event:MessageEvent<{type:string;course?:CourseV1;fast?:bool
       activeVersion=manifest.sha256;
     }
     const maneuver=managed||event.data.policy==="maneuver-006";
-    const model=managed?`/api/policy/model?version=${activeVersion}`:`/models/${maneuver?"maneuver-006-round-3.onnx":experimental?"obstacles-005-round-3.onnx":"actor.onnx"}`;
+    const model=managed&&!staticDeployment?`/api/policy/model?version=${activeVersion}`:`${basePath}/models/${managed?JSON.parse(await (await fetch(`${basePath}/models/active-policy.json`)).text()).file:maneuver?"maneuver-006-round-3.onnx":experimental?"obstacles-005-round-3.onnx":"actor.onnx"}`;
     self.postMessage({type:"loading"});
     if(!session||sessionModel!==model){
       ort.env.wasm.numThreads=1;
-      ort.env.wasm.wasmPaths=`${self.location.origin}/onnx/`;
-      const loaded=await ort.InferenceSession.create(`${self.location.origin}${model}`,{executionProviders:["wasm"]});
+      ort.env.wasm.wasmPaths=`${basePath}/onnx/`;
+      const loaded=await ort.InferenceSession.create(staticDeployment?model:`${self.location.origin}${model}`,{executionProviders:["wasm"]});
       if(token!==generation){await loaded.release();return;}
       if(session)await session.release();
       session=loaded;sessionModel=model;
