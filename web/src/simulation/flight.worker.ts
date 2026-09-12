@@ -7,7 +7,7 @@ let active=false,generation=0;
 let sessionModel="";
 const sleep=(ms:number)=>new Promise(resolve=>setTimeout(resolve,ms));
 const basePath=process.env.NEXT_PUBLIC_BASE_PATH??"";
-const staticDeployment=process.env.GITHUB_PAGES==="true";
+const staticDeployment=process.env.NEXT_PUBLIC_STATIC_DEPLOYMENT==="true";
 self.onmessage=async(event:MessageEvent<{type:string;course?:CourseV1;fast?:boolean;policy?:string}>)=>{
   if(event.data.type!=="start"){active=false;generation++;return;}
   const token=++generation;active=true;

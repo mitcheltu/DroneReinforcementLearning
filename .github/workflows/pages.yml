@@ -29,6 +29,7 @@ jobs:
         env:
           GITHUB_PAGES: "true"
           NEXT_PUBLIC_BASE_PATH: /DroneReinforcementLearning
+          NEXT_PUBLIC_STATIC_DEPLOYMENT: "true"
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
